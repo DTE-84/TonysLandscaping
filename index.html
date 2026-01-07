@@ -1,176 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tony's Landscape</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <a href="#hero" class="logo">Tony's Landscape</a>
-            <ul class="nav-links" >
-                <li><a href="#services" class="nav-links">Services</a></li>
-                <li><a href="#gallery" class="nav-links">Gallery</a></li>
-                <li><a href="#about" class="nav-links">About</a></li>
-                <li><button id="contactBtn" class="contact-btn">Contact</button></li>
-            </ul>
-            <button id="hamburger-btn">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </nav>
+      <nav>
+        <a href="#hero" class="logo">Tony's Landscape</a>
+        <ul class="nav-links">
+          <li><a href="#services" class="nav-links">Services</a></li>
+          <li><a href="#gallery" class="nav-links">Gallery</a></li>
+          <li><a href="#about" class="nav-links">About</a></li>
+          <li><button id="contactBtn" class="contact-btn">Contact</button></li>
+        </ul>
+        <button id="hamburger-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <h1>Crafting Beautiful Outdoor Spaces</h1>
-            <p>From garden design to lawn maintenance, we bring your vision to life.</p>
-        </section>
+      <section id="hero">
+        <h1>Crafting Beautiful Outdoor Spaces</h1>
+        <p>
+          From garden design to lawn maintenance, we bring your vision to life.
+        </p>
+      </section>
 
-        <section id="services">
-            <h2>Our Services</h2>
-            <div class="cards-container">
-                <div class="card">
-                    <h3>Lawn & Garden Care</h3>
-                    <ul>
-                        <li>Mowing, edging, and trimming</li>
-                        <li>Fertilization and weed control</li>
-                        <li>Aeration and overseeding</li>
-                        <li>Seasonal cleanups</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Hardscaping & Patios</h3>
-                    <ul>
-                        <li>Paver and stone patios</li>
-                        <li>Retaining walls</li>
-                        <li>Walkways and paths</li>
-                        <li>Fire pits and outdoor kitchens</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Planting & Garden Design</h3>
-                    <ul>
-                        <li>Garden bed design and installation</li>
-                        <li>Tree and shrub planting</li>
-                        <li>Mulching and soil amendment</li>
-                        <li>Flower and perennial gardens</li>
-                    </ul>
-                </div>
+      <section id="services">
+        <h2>Our Services</h2>
+        <div class="cards-container">
+          <div class="card">
+            <h3>Lawn & Garden Care</h3>
+            <ul>
+              <li>Mowing, edging, and trimming</li>
+              <li>Fertilization and weed control</li>
+              <li>Aeration and overseeding</li>
+              <li>Seasonal cleanups</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Hardscaping & Patios</h3>
+            <ul>
+              <li>Paver and stone patios</li>
+              <li>Retaining walls</li>
+              <li>Walkways and paths</li>
+              <li>Fire pits and outdoor kitchens</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Planting & Garden Design</h3>
+            <ul>
+              <li>Garden bed design and installation</li>
+              <li>Tree and shrub planting</li>
+              <li>Mulching and soil amendment</li>
+              <li>Flower and perennial gardens</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery">
+        <h2 class="gallery_title">Our Portfolio</h2>
+        <p class="gallery-intro">
+          Explore our diverse range of projects, bringing beauty and
+          functionality to every outdoor space.
+        </p>
+        <div class="cards-container">
+          <a
+            href="#"
+            class="service-card-trigger card"
+            data-gallery-target="lawn-gallery"
+          >
+            <img src="./fronthillafter.jpeg" alt="Lawn Mowing" />
+            <div class="card-overlay">
+              <h3>Lawn Care</h3>
+              <p>Click to view our work</p>
             </div>
-        </section>
-
-        <section id="gallery">
-            <h2 class="gallery_title">Our Portfolio</h2>
-            <p class="gallery-intro">Explore our diverse range of projects, bringing beauty and functionality to every outdoor space.</p>
-            <div class="cards-container">
-                <a href="#" class="service-card-trigger card" data-gallery-target="lawn-gallery">
-                    <img src="./fronthillafter.jpeg" alt="Lawn Mowing">
-                    <div class="card-overlay">
-                        <h3>Lawn Care</h3>
-                        <p>Click to view our work</p>
-                    </div>
-                </a>
-                <a href="#" class="service-card-trigger card" data-gallery-target="hardscaping-gallery">
-                    <img src="./stonepatioduring1.jpg" alt="Hardscaping and Patios" class="gallery-cover-image">
-                    <div class="card-overlay">
-                        <h3>Hardscaping & Patios</h3>
-                        <p>Click to view our work</p>
-                    </div>
-                </a>
-                <a href="#" class="service-card-trigger card" data-gallery-target="planting-gallery">
-                    <img src="./frontsidelandscapeplants.jpeg" alt="Garden Design">
-                    <div class="card-overlay">
-                        <h3>Planting & Garden Design</h3>
-                        <p>Click to view our work</p>
-                    </div>
-                </a>
+          </a>
+          <a
+            href="#"
+            class="service-card-trigger card"
+            data-gallery-target="hardscaping-gallery"
+          >
+            <img
+              src="./stonepatioduring1.jpg"
+              alt="Hardscaping and Patios"
+              class="gallery-cover-image"
+            />
+            <div class="card-overlay">
+              <h3>Hardscaping & Patios</h3>
+              <p>Click to view our work</p>
             </div>
-        </section>
+          </a>
+          <a
+            href="#"
+            class="service-card-trigger card"
+            data-gallery-target="planting-gallery"
+          >
+            <img src="./frontsidelandscapeplants.jpeg" alt="Garden Design" />
+            <div class="card-overlay">
+              <h3>Planting & Garden Design</h3>
+              <p>Click to view our work</p>
+            </div>
+          </a>
+        </div>
+      </section>
 
-        <section id="about">
-            <h2 class="about_title">Tony's Landscape</h2>
-            <p>Founded in 2022, Tony's Landscape has been dedicated to creating and maintaining beautiful landscapes with a commitment to quality and customer satisfaction. Our team of experienced horticulturists and designers works closely with you to turn your outdoor dreams into reality. We believe in sustainable practices, using eco-friendly materials and methods whenever possible.</p>
-        </section>
+      <section id="about">
+        <h2 class="about_title">Tony's Landscape</h2>
+        <p>
+          Founded in 2022, Tony's Landscape has been dedicated to creating and
+          maintaining beautiful landscapes with a commitment to quality and
+          customer satisfaction. Our team of experienced horticulturists and
+          designers works closely with you to turn your outdoor dreams into
+          reality. We believe in sustainable practices, using eco-friendly
+          materials and methods whenever possible.
+        </p>
+      </section>
     </main>
 
     <footer>
-        <ul class="footer-links">
-            <li><a href="#services">Services</a></li>
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#about">About</a></li>
-            <li><button id="contactBtn" class="contact-btn">Contact</button></li>
-        </ul>
-        <p>&copy; 2026 Tony's Landscape. All Rights Reserved.</p>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#about">About</a></li>
+        <li><button id="contactBtn" class="contact-btn">Contact</button></li>
+      </ul>
+      <p>&copy; 2026 Tony's Landscape. All Rights Reserved.</p>
     </footer>
 
     <!-- Lightboxes for each service -->
     <div class="lightbox-gallery" id="lawn-gallery">
-        <button class="lightbox-close-btn">&times;</button>
-        <div class="lightbox-content">
-            <h2>Lawn & Garden Care Gallery</h2>
-            <div class="lightbox-grid">
-                <img src="./fronthillafter.jpeg" alt="Front Hill After">
-                <img src="./fronthillbefore.jpeg" alt="Front Hill Before">
-                <img src="./fronthillduring.jpeg" alt="Front Hill During">
-            </div>
+      <button class="lightbox-close-btn">&times;</button>
+      <div class="lightbox-content">
+        <h2>Lawn & Garden Care Gallery</h2>
+        <div class="lightbox-grid">
+          <img src="./fronthillafter.jpeg" alt="Front Hill After" />
+          <img src="./fronthillbefore.jpeg" alt="Front Hill Before" />
+          <img src="./fronthillduring.jpeg" alt="Front Hill During" />
         </div>
+      </div>
     </div>
 
     <div class="lightbox-gallery" id="hardscaping-gallery">
-        <button class="lightbox-close-btn">&times;</button>
-        <div class="lightbox-content">
-            <h2>Hardscaping & Patios Gallery</h2>
-            <div class="lightbox-grid">
-                <img src="./stonepatio.jpeg" alt="Stone Patio">
-                <img src="./stonepatioback.jpg" alt="Stone Patio Back">
-                <img src="./stonepatiobefore.jpg" alt="Stone Patio Before">
-                <img src="./stonepatioduring.jpg" alt="Stone Patio During">
-                <img src="./stonepatioduring1.jpg" alt="Stone Patio During 1">
-                <img src="./stonepatioduring2.jpg" alt="Stone Patio During 2">
-            </div>
+      <button class="lightbox-close-btn">&times;</button>
+      <div class="lightbox-content">
+        <h2>Hardscaping & Patios Gallery</h2>
+        <div class="lightbox-grid">
+          <img src="./stonepatio.jpeg" alt="Stone Patio" />
+          <img src="./stonepatioback.jpg" alt="Stone Patio Back" />
+          <img src="./stonepatiobefore.jpg" alt="Stone Patio Before" />
+          <img src="./stonepatioduring.jpg" alt="Stone Patio During" />
+          <img src="./stonepatioduring1.jpg" alt="Stone Patio During 1" />
+          <img src="./stonepatioduring2.jpg" alt="Stone Patio During 2" />
         </div>
+      </div>
     </div>
 
     <div class="lightbox-gallery" id="planting-gallery">
-        <button class="lightbox-close-btn">&times;</button>
-        <div class="lightbox-content">
-            <h2>Planting & Garden Design Gallery</h2>
-            <div class="lightbox-grid">
-                <img src="./fountainlandscape.jpeg" alt="Fountain Landscape">
-                <img src="./fountainlandscape2.jpeg" alt="Fountain Landscape 2">
-                <img src="./fountainlandscape3.jpeg" alt="Fountain Landscape 3">
-                <img src="./fountainlandscape4.jpeg" alt="Fountain Landscape 4">
-                <img src="./fountainlandscape5.jpeg" alt="Fountain Landscape 5">
-                <img src="./frontlandscapeplants.jpeg" alt="Front Landscape Plants">
-                <img src="./frontsidelandscapeplants.jpeg" alt="Front Side Landscape Plants">
-            </div>
+      <button class="lightbox-close-btn">&times;</button>
+      <div class="lightbox-content">
+        <h2>Planting & Garden Design Gallery</h2>
+        <div class="lightbox-grid">
+          <img src="./fountainlandscape.jpeg" alt="Fountain Landscape" />
+          <img src="./fountainlandscape2.jpeg" alt="Fountain Landscape 2" />
+          <img src="./fountainlandscape3.jpeg" alt="Fountain Landscape 3" />
+          <img src="./fountainlandscape4.jpeg" alt="Fountain Landscape 4" />
+          <img src="./fountainlandscape5.jpeg" alt="Fountain Landscape 5" />
+          <img src="./frontlandscapeplants.jpeg" alt="Front Landscape Plants" />
+          <img
+            src="./frontsidelandscapeplants.jpeg"
+            alt="Front Side Landscape Plants"
+          />
         </div>
+      </div>
     </div>
 
     <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn">&times;</span>
-            <h2>Contact Us</h2>
-            <p>Have a question or want a quote? Send us a message!</p>
-            <form id="contactForm">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="contactInfo">Email or Phone:</label>
-                <input type="text" id="contactInfo" name="contactInfo" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Contact Us</h2>
+        <p>Have a question or want a quote? Send us a message!</p>
+        <form id="contactForm">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
+
+          <label for="contactInfo">Email or Phone:</label>
+          <input type="text" id="contactInfo" name="contactInfo" required />
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
