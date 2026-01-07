@@ -1,32 +1,39 @@
-document.addEventListener('DOMContentLoaded', () => {
+
 
     // --- Mobile Hamburger Menu ---
-    const hamburgerBtn = document.getElementById('hamburger-btn');
+     document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerBtn = document.querySelector('.hamburger-btn');
     const navLinks = document.querySelector('.nav-links');
-
     if (hamburgerBtn && navLinks) {
         hamburgerBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('nav-active');
+            navLinks.classList.toggle('nav-active'); // Toggles visibility of the nav links
+            hamburgerBtn.classList.toggle('open');   // Toggles animation for the hamburger icon
         });
 
-        // Close menu when a link inside it is clicked
-        navLinks.addEventListener('click', (e) => {
-            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') {
-                navLinks.classList.remove('nav-active');
-            }
-        });
-    }
+           // Optional: Close the mobile menu when a link inside it is clicked
+           navLinks.querySelectorAll('a').forEach(link => {
+             link.addEventListener('click', () => {
+                   navLinks.classList.remove('nav-active');
+                   hamburgerBtn.classList.remove('open');
+             });
+         });     }
+ });
 
     // --- Contact Modal Functionality ---
     const modal = document.getElementById('contactModal');
-    const contactBtn = document.getElementById('contactBtn');
+    const contactBtnHeader = document.getElementById('contactBtnHeader'); // Updated ID
     const closeBtn = document.querySelector('.close-btn');
 
     const openModal = () => modal.style.display = 'flex';
     const closeModal = () => modal.style.display = 'none';
 
-    if (modal && contactBtn && closeBtn) {
-        contactBtn.addEventListener('click', openModal);
+    if (modal && contactBtnHeader && closeBtn) { // Use contactBtnHeader here
+        contactBtnHeader.addEventListener('click', openModal);
+        // Add event listener for the footer contact button
+        const contactBtnFooter = document.getElementById('contactBtnFooter');
+        if (contactBtnFooter) {
+            contactBtnFooter.addEventListener('click', openModal);
+        }
         closeBtn.addEventListener('click', closeModal);
         // Close modal if user clicks on the background overlay
         window.addEventListener('click', (event) => {
@@ -113,4 +120,4 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
-});
+

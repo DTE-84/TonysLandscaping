@@ -84,12 +84,12 @@ nav {
     color: white;
     font-weight: 500;
     transition: color 0.3s ease;
+    position: relative;
 }
 
 .nav-links a:hover {
    /* Example link color */
   text-decoration: none; /* Hide default underline */
-  position: relative; /* Essential for positioning the pseudo-element */
   padding-bottom: 2px; /* Space between text and custom underline */
   transition: color 0.3s ease; /* Optional: smooth text color change on hover */
 }
@@ -516,18 +516,27 @@ footer {
 }
 
 /* --- RESPONSIVE & HAMBURGER MENU --- */
-#hamburger-btn {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    z-index: 10;
-}
+.hamburger-btn {
+     display: none; /* Hidden by default on desktop */
+     flex-direction: column;
+     justify-content: space-around;
+     width: 2rem;
+     height: 1.5rem; /* Adjusted height for 3 bars */
+     background: transparent;
+     border: none;
+     cursor: pointer;
+     padding: 0;
+     z-index: 10;
+ }
+
+ .hamburger-bar {
+     display: block;
+     width: 100%;
+     height: 3px; /* Thickness of each bar */
+     background: var(--white);
+     border-radius: 2px;
+     transition: all 0.3s ease-in-out;
+ }
 
 #hamburger-btn span {
     width: 2rem;
@@ -536,54 +545,66 @@ footer {
     border-radius: 10px;
 }
 
-@media (max-width: 768px) {
-    #hamburger-btn {
-        display: flex;
+ @media (max-width: 768px) {
+     .hamburger-btn {
+         display: flex; /* Show hamburger button on mobile */
+       }
+
+       .nav-links {
+           display: none; /* Hide desktop nav links on mobile by default */
+         flex-direction: column;
+         position: absolute;
+         top: 100%; /* Position below the header */
+         left: 0;
+         width: 100%;
+           background-color: var(--primary-color);
+         box-shadow: var(--shadow);
+         z-index: 9; /* Below the header but above other content */
+         padding: 1rem 0;
+     }
+
+     .nav-links.nav-active {
+         display: flex; /* Show mobile nav when active */
+     }
+
+     .nav-links li {
+         margin: 1rem 0;
+           text-align: center;
+     }
+
+     .nav-links a {
+           font-size: 1.2rem;
+        padding: 0.5rem;
+           display: block; /* Make links full width to be clickable easier */
+       }
+
+
+    .nav-links button {
+        color: var(--white);
+        text-decoration: none;
+        font-size: 1.5rem;
     }
 
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--white);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem 0;
+    .nav-links a:hover,
+    .nav-links button:hover {
+        color: var(--secondary-color);
+    }
+
+    .nav-links a:active,
+    .nav-links button:active {
+        color: var(--secondary-color);
+    }
+
+    .nav-links a:visited,
+    .nav-links button:visited {
+        color: var(--secondary-color);
     }
     
     .nav-links.nav-active {
-        display: flex;
+        display: flex; /* Show when active */
     }
 
     .nav-links li {
-        margin: 1rem 0;
-    }
-
-    .hero-content h1 {
-        font-size: 2rem;
-    }
-
-    main section {
-        padding: 3rem 1rem; /* Adjust padding for smaller screens */
-    }
-
-    .lightbox-gallery .lightbox-content {
-        max-width: 95%;
-        padding: 1rem;
-    }
-
-    .lightbox-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Smaller grid items for mobile */
-    }
-
-    .close-btn, .lightbox-close-btn {
-        top: 0.5rem;
-        right: 1rem;
-        font-size: 2rem;
-        background-color: transparent;
-        border: none;  
+        margin: 1rem 0; /* Add vertical spacing for list items */
     }
 }
