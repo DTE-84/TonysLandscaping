@@ -305,9 +305,9 @@ main {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    text-shadow: 2px 2px 3px black;
-    color:  #c1fec3;
-    font-size: 1.3rem;
+    color: #aaffac;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    font-size: 1.4rem;
 }
 
 h2 {
