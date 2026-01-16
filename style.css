@@ -305,9 +305,9 @@ main {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-    color: #aaffac;
-    text-shadow: 2px 2px 3px rgb(0, 0, 0);
-    font-size: 1.4rem;
+    color: #7bec7d;
+    text-shadow: 2px 2px 2px rgb(0, 0, 0);
+    font-size: 1.5rem;
 }
 
 h2 {
@@ -603,7 +603,7 @@ footer {
 
 
 main {
-    background-color: #D2B48C;
+    background-color: rgb(212 203 190);
 }
 
 #hero, #services {
