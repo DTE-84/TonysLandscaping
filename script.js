@@ -6,11 +6,11 @@
     const navLinks = document.querySelector('.nav-links');
     if (hamburgerBtn && navLinks) {
         hamburgerBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('nav-active'); // Toggles visibility of the nav links
-            hamburgerBtn.classList.toggle('open');   // Toggles animation for the hamburger icon
+            navLinks.classList.toggle('nav-active'); 
+            hamburgerBtn.classList.toggle('open');   
         });
 
-           // Optional: Close the mobile menu when a link inside it is clicked
+          
            navLinks.querySelectorAll('a').forEach(link => {
              link.addEventListener('click', () => {
                    navLinks.classList.remove('nav-active');
@@ -21,21 +21,21 @@
 
     // --- Contact Modal Functionality ---
     const modal = document.getElementById('contactModal');
-    const contactBtnHeader = document.getElementById('contactBtnHeader'); // Updated ID
+    const contactBtnHeader = document.getElementById('contactBtnHeader'); 
     const closeBtn = document.querySelector('.close-btn');
 
     const openModal = () => modal.style.display = 'flex';
     const closeModal = () => modal.style.display = 'none';
 
-    if (modal && contactBtnHeader && closeBtn) { // Use contactBtnHeader here
+    if (modal && contactBtnHeader && closeBtn) { 
         contactBtnHeader.addEventListener('click', openModal);
-        // Add event listener for the footer contact button
+        
         const contactBtnFooter = document.getElementById('contactBtnFooter');
         if (contactBtnFooter) {
             contactBtnFooter.addEventListener('click', openModal);
         }
         closeBtn.addEventListener('click', closeModal);
-        // Close modal if user clicks on the background overlay
+       
         window.addEventListener('click', (event) => {
             if (event.target === modal) {
                 closeModal();
@@ -50,57 +50,58 @@
 
     serviceCardTriggers.forEach(trigger => {
         trigger.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent default link behavior
+            e.preventDefault(); 
             const targetId = trigger.dataset.galleryTarget;
             const targetLightbox = document.getElementById(targetId);
             if (targetLightbox) {
-                targetLightbox.style.display = 'flex'; // Show the lightbox
+                targetLightbox.style.display = 'flex'; 
             }
         });
     });
 
     lightboxCloseBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            btn.closest('.lightbox-gallery').style.display = 'none'; // Hide the parent lightbox
+            btn.closest('.lightbox-gallery').style.display = 'none'; 
         });
     });
 
     // Close lightbox if user clicks on the background overlay
     lightboxGalleries.forEach(gallery => {
         gallery.addEventListener('click', (event) => {
-            if (event.target === gallery) { // Check if the click was on the overlay itself
+            if (event.target === gallery) { 
                 gallery.style.display = 'none';
             }
         });
     });
 
     // --- Contact Form Submission ---
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const name = document.getElementById('name').value;
-            const contactInfo = document.getElementById('contactInfo').value;
-            const message = document.getElementById('message').value;
-
-            // Simple validation
-            if (!name || !contactInfo || !message) {
-                alert('Please fill out all fields.');
-                return;
-            }
-
-            const recipientEmail = 'contact@tonyslandscape.com'; // ** IMPORTANT: Change this to your company's email **
-            const subject = `New Landscape Inquiry from ${name}`;
-            const body = `Name: ${name}\nContact: ${contactInfo}\n\nMessage:\n${message}`;
-
-            const mailtoLink = `mailto:${recipientEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // Open user's default email client
-            window.location.href = mailtoLink;
-
-            closeModal();
-            this.reset();
+    function contact(event) {
+   event.preventDefault();
+   const loading = document.querySelector(".modal__overlay--loading");
+   const success = document.querySelector(".modal__overlay--success");
+   loading.classList.add("modal__overlay--visible");
+   emailjs
+     .sendForm(
+       "service_9kmr7ne",
+       "template_cdr3twz",
+          event.target,
+          "zmPiRmxRkScwdiYFX"
+        )
+        .then(() => {
+          loading.classList.remove("modal__overlay--visible");
+          success.classList.add("modal__overlay--visible");
+       setTimeout(() => {
+            success.classList.remove("modal__overlay--visible");
+            toggleModal();
+            }, 2000);
+            const form = document.getElementById("contact__form");
+            form.reset();
+        })
+        .catch(() => {
+          loading.classList.remove("modal__overlay--visible");
+          alert(
+            "The email service is temporarily unavailable. Please contact me directly at drew.t.ernst@gmail.com"
+          );
         });
     }
     
