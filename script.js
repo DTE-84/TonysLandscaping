@@ -78,9 +78,8 @@ function contact(event) {
 
   loading.classList.add("modal__overlay--visible");
 
-  emailjs
-    .sendForm("service_9kmr7ne", "template_cdr3twz", event.target)
-    .then(() => {
+  emailjs.sendForm("service_9kmr7ne", "template_cdr3twz", event.target)
+    .then(function() {
       loading.classList.remove("modal__overlay--visible");
       success.classList.add("modal__overlay--visible");
       form.reset();
