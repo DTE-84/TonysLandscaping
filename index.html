@@ -5,27 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tony's Landscaping</title>
     <link rel="stylesheet" href="style.css" />
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("NtZIXLy7p6OXJHHbQ"); 
-        })();
-        </script>
-        <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contact-form').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // these IDs from the previous steps
-                emailjs.sendForm('contact_service', 'contact_form', this)
-                    .then(() => {
-                        console.log('SUCCESS!');
-                    }, (error) => {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
-    <script src="script.js"></script>
   </head>
   <body>
     <header>
@@ -35,7 +14,7 @@
           <li><a href="#services">Services</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#about">About</a></li>
-          <li><button id="contactBtnHeader" class="contact-btn">Contact</button></li>
+          <li><button id="contactBtnHeader"  value="send" class="contact-btn">Contact</button></li>
         </ul>
          <button class="hamburger-btn" aria-label="Toggle navigation">
                  <span class="hamburger-bar"></span>
@@ -208,7 +187,7 @@
         <span class="close-btn">&times;</span>
         <h2>Contact Us</h2>
         <p>Have a question or want a quote? Send us a message!</p>
-        <form id="contact-form">
+        <form id="contactForm">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
 
@@ -218,7 +197,7 @@
           <label for="message">Message:</label>
           <textarea id="message" name="message" rows="4" required></textarea>
 
-          <button onclick="sendEmail()" value="Send" type="submit">Send Message</button>
+          <button  value="send" type="submit">Send Message</button>
          
                 </form>
                 <div class="modal__overlay modal__overlay--loading">
@@ -231,6 +210,26 @@
       </div>
     </div>
 
-   
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("NtZIXLy7p6OXJHHbQ"); 
+        })();
+        </script>
+        <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_9kmr7ne', 'template_cdr3twz', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    <script src="script.js"></script>
   </body>
 </html>

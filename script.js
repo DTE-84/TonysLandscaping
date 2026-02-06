@@ -78,8 +78,9 @@ function contact(event) {
 
   loading.classList.add("modal__overlay--visible");
 
-  emailjs.sendForm("service_9kmr7ne", "template_cdr3twz", event.target)
-    .then(function() {
+  emailjs
+    .sendForm("service_9kmr7ne", "template_cdr3twz", event.target)
+    .then(() => {
       loading.classList.remove("modal__overlay--visible");
       success.classList.add("modal__overlay--visible");
       form.reset();
@@ -91,9 +92,7 @@ function contact(event) {
     .catch((err) => {
       loading.classList.remove("modal__overlay--visible");
       console.error(err);
-      alert(
-        "Submission failed. Please email tonylandscapingllc@outlook.com directly.",
-      );
+      alert("Submission failed. Please email tonylandscapingllc@outlook.com directly.");
     });
 }
 

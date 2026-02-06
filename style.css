@@ -574,15 +574,15 @@ footer {
   color: var(--accent-color);
 }
 
-#contact-form label {
+#contactForm label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
   color: #216e24;
 }
 
-#contact-form input,
-#contact-form textarea {
+#contactForm input,
+#contactForm textarea {
   width: 100%;
   padding: 0.8rem;
   margin-bottom: 1rem;
@@ -591,7 +591,7 @@ footer {
   box-sizing: border-box;
 }
 
-#contact-form button {
+#contactForm button {
   width: 100%;
   padding: 0.8rem;
   border: none;
@@ -603,7 +603,7 @@ footer {
   transition: background-color 0.3s ease;
 }
 
-#contact-form button:hover {
+#contactForm button:hover {
   background-color: white;
   border: solid 2px var(--primary-color);
   color: #216e24;
