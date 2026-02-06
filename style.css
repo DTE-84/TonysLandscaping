@@ -320,14 +320,23 @@ footer {
 }
 
 /* Success Animation Styles */
-.modal__overlay {
-  display: none;
-  flex-direction: column;
+ .modal__overlay {
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none; 
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 20px;
+  z-index: 100; 
+  background-color: #ffffff; 
+  border-radius: 8px; 
 }
+
+
 
 .modal__overlay--visible {
   display: flex !important;
