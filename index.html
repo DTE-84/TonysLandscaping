@@ -5,6 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tony's Landscaping</title>
     <link rel="stylesheet" href="style.css" />
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("NtZIXLy7p6OXJHHbQ"); 
+        })();
+        </script>
+        <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                    }, (error) => {
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    <script src="script.js"></script>
   </head>
   <body>
     <header>
@@ -141,9 +162,9 @@
       <div class="lightbox-content">
         <h2>Lawn & Garden Care Gallery</h2>
         <div class="lightbox-grid">
-          <img src="./fronthillafter.jpeg" alt="Front Hill After" />
-          <img src="./fronthillbefore.jpeg" alt="Front Hill Before" />
-          <img src="./fronthillduring.jpeg" alt="Front Hill During" />
+          <img src="./fronthillafter.jpeg" alt="Professional lawn landscaping on a sloped front yard by Tony's Landscaping" />
+          <img src="./fronthillbefore.jpeg" alt="Professional lawn landscaping on a sloped front yard by Tony's Landscaping" />
+          <img src="./fronthillduring.jpeg" alt="Professional lawn landscaping on a sloped front yard by Tony's Landscaping" />
         </div>
       </div>
     </div>
@@ -153,12 +174,12 @@
       <div class="lightbox-content">
         <h2>Hardscaping & Patios Gallery</h2>
         <div class="lightbox-grid">
-          <img src="./stonepatio.jpeg" alt="Stone Patio" />
-          <img src="./stonepatioback.jpg" alt="Stone Patio Back" />
-          <img src="./stonepatiobefore.jpg" alt="Stone Patio Before" />
-          <img src="./stonepatioduring.jpg" alt="Stone Patio During" />
-          <img src="./stonepatioduring1.jpg" alt="Stone Patio During 1" />
-          <img src="./stonepatioduring2.jpg" alt="Stone Patio During 2" />
+          <img src="./stonepatio.jpeg" alt="Professional stone patio  by Tony's Landscaping" />
+          <img src="./stonepatioback.jpg" alt="Professional stone patio  by Tony's Landscaping" />
+          <img src="./stonepatiobefore.jpg" alt="Professional stone patio  by Tony's Landscaping" />
+          <img src="./stonepatioduring.jpg" alt="Professional stone patio  by Tony's Landscaping" />
+          <img src="./stonepatioduring1.jpg" alt="Professional stone patio  by Tony's Landscaping" />
+          <img src="./stonepatioduring2.jpg" alt="Professional stone patio  by Tony's Landscaping" />
         </div>
       </div>
     </div>
@@ -187,7 +208,7 @@
         <span class="close-btn">&times;</span>
         <h2>Contact Us</h2>
         <p>Have a question or want a quote? Send us a message!</p>
-        <form id="contactForm">
+        <form id="contact-form">
           <label for="name">Name:</label>
           <input type="text" id="name" name="name" required />
 
@@ -197,17 +218,19 @@
           <label for="message">Message:</label>
           <textarea id="message" name="message" rows="4" required></textarea>
 
-          <button type="submit">Send Message</button>
+          <button onclick="sendEmail()" value="Send" type="submit">Send Message</button>
+         
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
         </form>
       </div>
     </div>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("zmPiRmxRkScwdiYFX"); // Replace with Tony's EmailJS Public Key
-        })();
-    </script>
-    <script src="script.js"></script>
+   
   </body>
 </html>
