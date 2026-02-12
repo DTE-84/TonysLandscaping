@@ -30,11 +30,19 @@ h1, h2, h3 {
 
 /* --- HEADER & NAVIGATION --- */
 header {
-  background-color: var(--white);
-  box-shadow: var(--shadow-sm);
-  position: sticky;
+  background-color: transparent; /* Starts transparent */
+  box-shadow: none;
+  position: fixed; /* Fixed for modern feel */
+  width: 100%;
   top: 0;
   z-index: 1000;
+  transition: all 0.4s ease;
+}
+
+header.scrolled {
+  background-color: var(--white);
+  box-shadow: var(--shadow-sm);
+  padding: 0.2rem 0;
 }
 
 nav {
@@ -43,15 +51,21 @@ nav {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
+  transition: var(--transition);
 }
 
 .logo {
   font-family: 'Playfair Display', serif;
   font-size: 1.6rem;
   font-weight: 700;
-  color: var(--primary-color);
+  color: var(--white); /* White on transparent hero */
   text-decoration: none;
+  transition: var(--transition);
+}
+
+header.scrolled .logo {
+  color: var(--primary-color);
 }
 
 .nav-links {
@@ -65,13 +79,17 @@ nav {
 
 .nav-links a {
   text-decoration: none;
-  color: var(--text-dark);
+  color: var(--white); /* White on hero */
   font-weight: 600;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1px;
   transition: var(--transition);
   position: relative;
+}
+
+header.scrolled .nav-links a {
+  color: var(--text-dark);
 }
 
 .nav-links a::after {
@@ -94,9 +112,9 @@ nav {
 }
 
 .contact-btn {
-  background-color: var(--primary-color);
+  background-color: transparent;
   color: var(--white);
-  border: none;
+  border: 1px solid rgba(255,255,255,0.5);
   padding: 0.7rem 1.5rem;
   border-radius: 4px;
   cursor: pointer;
@@ -106,17 +124,27 @@ nav {
   transition: var(--transition);
 }
 
+header.scrolled .contact-btn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+}
+
 .contact-btn:hover {
-  background-color: var(--secondary-color);
+  background-color: var(--white);
+  color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+}
+
+header.scrolled .contact-btn:hover {
+  background-color: var(--secondary-color);
 }
 
 /* --- HERO SECTION --- */
 
 #hero {
   position: relative;
-  height: 80vh;
+  height: 100vh; /* Full viewport height */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -125,10 +153,163 @@ nav {
   color: #ffffff;
   padding: 0 1rem;
   overflow: hidden;
-  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("fountainlandscape4.jpeg");
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("fountainlandscape4.jpeg");
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+}
+
+/* --- TRANSFORMATION SLIDER --- */
+#transformation {
+  background-color: var(--white);
+  padding: 8rem 2rem;
+}
+
+.section-intro {
+  text-align: center;
+  margin-top: -3rem;
+  margin-bottom: 4rem;
+  color: var(--text-dark);
+  opacity: 0.7;
+}
+
+.transformation-selector {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.transformation-tab {
+  background: transparent;
+  border: 1px solid var(--accent-color);
+  color: var(--primary-color);
+  padding: 0.5rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+.transformation-tab:hover {
+  background: var(--accent-color);
+}
+
+.transformation-tab.active {
+  background: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--white);
+  box-shadow: var(--shadow-md);
+}
+
+.comparison-slider {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.comparison-slider .before-image,
+.comparison-slider .after-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.comparison-slider .after-image {
+  z-index: 2;
+  width: 50%; /* This will be animated */
+  overflow: hidden;
+}
+
+.comparison-slider img {
+  width: 900px;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 940px) {
+  .comparison-slider img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .comparison-slider {
+    height: 350px;
+  }
+  .comparison-slider img {
+    height: 350px;
+  }
+}
+
+.label-before, .label-after {
+  position: absolute;
+  top: 20px;
+  background: rgba(0,0,0,0.5);
+  color: white;
+  padding: 5px 15px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.label-before { right: 20px; }
+.label-after { left: 20px; }
+
+.slider-handle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  cursor: ew-resize;
+  opacity: 0;
+  -webkit-appearance: none;
+}
+
+.slider-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 2px;
+  height: 100%;
+  background: white;
+  z-index: 3;
+  pointer-events: none;
+  transform: translateX(-50%);
+}
+
+.slider-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
 #hero h1 {

@@ -30,10 +30,40 @@
 
     <main>
       <section id="hero">
-        <h1>Crafting Beautiful Outdoor Spaces</h1>
-        <p>
+        <h1 class="reveal">Crafting Beautiful Outdoor Spaces</h1>
+        <p class="reveal">
           From garden design to lawn maintenance, we bring your vision to life.
         </p>
+      </section>
+
+      <section id="transformation" class="reveal">
+        <div class="container">
+          <h2>The Transformation</h2>
+          <p class="section-intro">Experience the precision and care we bring to every project. Slide to see the results.</p>
+          
+          <div class="transformation-selector">
+            <button class="transformation-tab active" data-before="./fronthillbefore.jpeg" data-after="./fronthillafter.jpeg">Front Hill</button>
+            <button class="transformation-tab" data-before="./frontstepbefore.jpeg" data-after="./frontstepafter.jpeg">Front Step</button>
+            <button class="transformation-tab" data-before="./stonepatiobefore.jpg" data-after="./stonepatio.jpeg">Stone Patio</button>
+            <button class="transformation-tab" data-before="./frontlandscapebefore.jpeg" data-after="./frontlandscape.jpeg">Garden Bed</button>
+          </div>
+
+          <div class="comparison-slider">
+            <div class="before-image">
+              <img id="beforeImg" src="./fronthillbefore.jpeg" alt="Before landscaping">
+              <div class="label-before">Before</div>
+            </div>
+            <div class="after-image">
+              <img id="afterImg" src="./fronthillafter.jpeg" alt="After landscaping">
+              <div class="label-after">After</div>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider-handle" id="beforeAfterSlider">
+            <div class="slider-line"></div>
+            <div class="slider-button">
+              <i class="fa-solid fa-arrows-left-right"></i>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="services">

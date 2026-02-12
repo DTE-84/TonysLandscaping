@@ -1,7 +1,21 @@
 // --- Mobile Hamburger Menu ---
 document.addEventListener("DOMContentLoaded", () => {
+  const header = document.querySelector("header");
   const hamburgerBtn = document.querySelector(".hamburger-btn");
   const navLinks = document.querySelector(".nav-links");
+  
+  // --- Header Scroll Logic ---
+  const handleScroll = () => {
+    if (window.scrollY > 50) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  handleScroll(); // Initial check
+
   if (hamburgerBtn && navLinks) {
     hamburgerBtn.addEventListener("click", () => {
       navLinks.classList.toggle("nav-active");
@@ -17,6 +31,44 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // --- Before/After Slider Logic ---
+  const slider = document.getElementById("beforeAfterSlider");
+  const afterImage = document.querySelector(".after-image");
+  const sliderLine = document.querySelector(".slider-line");
+  const sliderButton = document.querySelector(".slider-button");
+  const beforeImg = document.getElementById("beforeImg");
+  const afterImg = document.getElementById("afterImg");
+  const tabs = document.querySelectorAll(".transformation-tab");
+
+  if (slider) {
+    slider.addEventListener("input", (e) => {
+      const value = e.target.value;
+      afterImage.style.width = `${value}%`;
+      sliderLine.style.left = `${value}%`;
+      sliderButton.style.left = `${value}%`;
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      // Update Active Tab
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      // Update Images
+      const beforeSrc = tab.dataset.before;
+      const afterSrc = tab.dataset.after;
+
+      // Smooth transition effect
+      afterImage.style.opacity = "0";
+      setTimeout(() => {
+        beforeImg.src = beforeSrc;
+        afterImg.src = afterSrc;
+        afterImage.style.opacity = "1";
+      }, 200);
+    });
+  });
 
   // --- Scroll Reveal Animation ---
   const observerOptions = {
