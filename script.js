@@ -6,15 +6,36 @@ document.addEventListener("DOMContentLoaded", () => {
     hamburgerBtn.addEventListener("click", () => {
       navLinks.classList.toggle("nav-active");
       hamburgerBtn.classList.toggle("open");
+      document.body.style.overflow = navLinks.classList.contains("nav-active") ? "hidden" : "auto";
     });
 
     navLinks.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         navLinks.classList.remove("nav-active");
         hamburgerBtn.classList.remove("open");
+        document.body.style.overflow = "auto";
       });
     });
   }
+
+  // --- Scroll Reveal Animation ---
+  const observerOptions = {
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px"
+  };
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll(".reveal").forEach(el => {
+    revealObserver.observe(el);
+  });
 });
 
 // --- Contact Modal Functionality ---

@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tony's Landscaping</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/66240d21b2.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -35,7 +39,7 @@
       <section id="services">
         <h2>Our Services</h2>
         <div class="cards-container">
-          <div class="card">
+          <div class="card reveal">
             <h3>Lawn & Garden Care</h3>
             <ul>
               <li>Mowing, edging, and trimming</li>
@@ -44,7 +48,7 @@
               <li>Seasonal cleanups</li>
             </ul>
           </div>
-          <div class="card">
+          <div class="card reveal">
             <h3>Hardscaping & Patios</h3>
             <ul>
               <li>Paver and stone patios</li>
@@ -53,7 +57,7 @@
               <li>Fire pits and outdoor kitchens</li>
             </ul>
           </div>
-          <div class="card">
+          <div class="card reveal">
             <h3>Planting & Garden Design</h3>
             <ul>
               <li>Garden bed design and installation</li>
@@ -66,15 +70,15 @@
       </section>
 
       <section id="gallery">
-        <h2 class="gallery_title">Our Portfolio</h2>
-        <p class="gallery-intro">
+        <h2 class="gallery_title reveal">Our Portfolio</h2>
+        <p class="gallery-intro reveal">
           Explore our diverse range of projects, bringing beauty and
           functionality to every outdoor space.
         </p>
         <div class="cards-container">
           <a
             href="#"
-            class="service-card-trigger card"
+            class="service-card-trigger card reveal"
             data-gallery-target="lawn-gallery"
           >
             <img src="./fronthillafter.jpeg" alt="Lawn Mowing" />
@@ -85,7 +89,7 @@
           </a>
           <a
             href="#"
-            class="service-card-trigger card"
+            class="service-card-trigger card reveal"
             data-gallery-target="hardscaping-gallery"
           >
             <img
@@ -100,7 +104,7 @@
           </a>
           <a
             href="#"
-            class="service-card-trigger card"
+            class="service-card-trigger card reveal"
             data-gallery-target="planting-gallery"
           >
             <img src="./frontsidelandscapeplants.jpeg" alt="Garden Design" />
@@ -113,8 +117,8 @@
       </section>
 
       <section id="about">
-        <h2 class="about_title">Tony's Landscape</h2>
-        <p>
+        <h2 class="about_title reveal">Tony's Landscape</h2>
+        <p class="reveal">
           Founded in 2022, Tony's Landscape has been dedicated to creating and
           maintaining beautiful landscapes with a commitment to quality and
           customer satisfaction. Our team of experienced horticulturists and
@@ -126,13 +130,20 @@
     </main>
 
     <footer>
-      <ul class="footer-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#about">About</a></li>
-        <li><button id="contactBtnFooter" class="contact-btn">Contact</button></li>
-      </ul>
-      <p>&copy; 2026 Tony's Landscaping. All Rights Reserved.</p>
+      <div class="footer-content">
+        <ul class="footer-links">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><button id="contactBtnFooter" class="contact-btn">Contact</button></li>
+        </ul>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/profile.php?id=100092632141929" target="_blank" aria-label="Visit our Facebook page">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </div>
+        <p class="copyright">&copy; 2026 Tony's Landscaping. All Rights Reserved.</p>
+      </div>
     </footer>
 
     <!-- Lightboxes for each service -->
@@ -141,9 +152,9 @@
       <div class="lightbox-content">
         <h2>Lawn & Garden Care Gallery</h2>
         <div class="lightbox-grid">
-          <img src="./fronthillafter.jpeg" alt="Professional lawn landscaping on a sloped front yard by Tony's Landscaping" />
-          <img src="./fronthillbefore.jpeg" alt="Professional lawn landscaping on a sloped front yard by Tony's Landscaping" />
-          <img src="./fronthillduring.jpeg" alt="Professional lawn landscaping on a sloped front yard by Tony's Landscaping" />
+          <img src="./fronthillafter.jpeg" alt="Hill Side After" />
+          <img src="./fronthillduring.jpeg" alt="Hill Side During" />
+          <img src="./fronthillbefore.jpeg" alt="Hill Side Before" />
         </div>
       </div>
     </div>
@@ -153,12 +164,19 @@
       <div class="lightbox-content">
         <h2>Hardscaping & Patios Gallery</h2>
         <div class="lightbox-grid">
-          <img src="./stonepatio.jpeg" alt="Professional stone patio  by Tony's Landscaping" />
-          <img src="./stonepatioback.jpg" alt="Professional stone patio  by Tony's Landscaping" />
-          <img src="./stonepatiobefore.jpg" alt="Professional stone patio  by Tony's Landscaping" />
-          <img src="./stonepatioduring.jpg" alt="Professional stone patio  by Tony's Landscaping" />
-          <img src="./stonepatioduring1.jpg" alt="Professional stone patio  by Tony's Landscaping" />
-          <img src="./stonepatioduring2.jpg" alt="Professional stone patio  by Tony's Landscaping" />
+          <img src="./stonepatio.jpeg" alt="Stone Patio Main" />
+          <img src="./stonebackpatio.jpeg" alt="Stone Back Patio" />
+          <img src="./stonepatioback.jpg" alt="Stone Patio Back View" />
+          <img src="./stonepatioduring.jpg" alt="Stone Patio During Construction" />
+          <img src="./stonepatioduring1.jpg" alt="Stone Patio During Construction 1" />
+          <img src="./stonepatioduring2.jpg" alt="Stone Patio During Construction 2" />
+          <img src="./stonepatiobefore.jpg" alt="Stone Patio Before" />
+          <img src="./frontstepafter.jpeg" alt="Front Step After" />
+          <img src="./frontstepafter2.jpeg" alt="Front Step After 2" />
+          <img src="./frontstepafter3.jpeg" alt="Front Step After 3" />
+          <img src="./frontstepduring.jpeg" alt="Front Step During" />
+          <img src="./frontstepduring2.jpeg" alt="Front Step During 2" />
+          <img src="./frontstepbefore.jpeg" alt="Front Step Before" />
         </div>
       </div>
     </div>
@@ -173,11 +191,12 @@
           <img src="./fountainlandscape3.jpeg" alt="Fountain Landscape 3" />
           <img src="./fountainlandscape4.jpeg" alt="Fountain Landscape 4" />
           <img src="./fountainlandscape5.jpeg" alt="Fountain Landscape 5" />
+          <img src="./frontlandscape.jpeg" alt="Front Landscape Complete" />
           <img src="./frontlandscapeplants.jpeg" alt="Front Landscape Plants" />
-          <img
-            src="./frontsidelandscapeplants.jpeg"
-            alt="Front Side Landscape Plants"
-          />
+          <img src="./frontsidelandscapeplants.jpeg" alt="Front Side Landscape Plants" />
+          <img src="./frontlandscapebefore.jpeg" alt="Front Landscape Before" />
+          <img src="./stonelandscape.jpeg" alt="Stone Landscape" />
+          <img src="./stonelandscape2.jpeg" alt="Stone Landscape Detail" />
         </div>
       </div>
     </div>
