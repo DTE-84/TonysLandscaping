@@ -115,8 +115,18 @@ const modal = document.getElementById("contactModal");
 const contactBtnHeader = document.getElementById("contactBtnHeader");
 const closeBtn = document.querySelector(".close-btn");
 
-const openModal = () => (modal.style.display = "flex");
-const closeModal = () => (modal.style.display = "none");
+const openModal = () => {
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden";
+};
+const closeModal = () => {
+  modal.style.display = "none";
+  // Only restore scroll if no lightbox is open
+  const isAnyLightboxVisible = Array.from(document.querySelectorAll(".lightbox-gallery")).some(g => g.style.display === "flex");
+  if (!isAnyLightboxVisible) {
+    document.body.style.overflow = "auto";
+  }
+};
 
 if (modal && contactBtnHeader && closeBtn) {
   contactBtnHeader.addEventListener("click", openModal);
@@ -145,6 +155,7 @@ serviceCardTriggers.forEach((trigger) => {
     const targetLightbox = document.getElementById(targetId);
     if (targetLightbox) {
       targetLightbox.style.display = "flex";
+      document.body.style.overflow = "hidden";
     }
   });
 });
@@ -152,6 +163,7 @@ serviceCardTriggers.forEach((trigger) => {
 lightboxCloseBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
     btn.closest(".lightbox-gallery").style.display = "none";
+    document.body.style.overflow = "auto";
   });
 });
 
@@ -159,6 +171,7 @@ lightboxGalleries.forEach((gallery) => {
   gallery.addEventListener("click", (event) => {
     if (event.target === gallery) {
       gallery.style.display = "none";
+      document.body.style.overflow = "auto";
     }
   });
 });
