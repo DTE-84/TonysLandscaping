@@ -88,6 +88,26 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".reveal").forEach(el => {
     revealObserver.observe(el);
   });
+
+  // --- Scope Calculator Logic ---
+  const sizeSlider = document.getElementById("size-slider");
+  const sizeDisplay = document.getElementById("size-display");
+  const scopeBtns = document.querySelectorAll(".scope-btn");
+
+  if (sizeSlider && sizeDisplay) {
+    sizeSlider.addEventListener("input", (e) => {
+      const val = e.target.value;
+      sizeDisplay.textContent = val >= 5 ? "5.0+ Acres" : `${val} Acres`;
+    });
+  }
+
+  scopeBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Toggle active state
+      scopeBtns.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+    });
+  });
 });
 
 // --- Contact Modal Functionality ---
@@ -142,6 +162,42 @@ lightboxGalleries.forEach((gallery) => {
     }
   });
 });
+
+// --- Fullscreen Image Viewer Logic ---
+const imageViewer = document.getElementById("image-viewer");
+const fullViewerImg = document.getElementById("full-viewer-img");
+const viewerClose = document.querySelector(".viewer-close");
+
+// Open Fullscreen Viewer when clicking any image in a lightbox grid
+document.querySelectorAll(".lightbox-grid img").forEach(img => {
+  img.addEventListener("click", () => {
+    imageViewer.style.display = "flex";
+    fullViewerImg.src = img.src;
+    document.body.style.overflow = "hidden";
+  });
+});
+
+// Close Fullscreen Viewer
+const closeViewer = () => {
+  imageViewer.style.display = "none";
+  // Check if a lightbox gallery is still open to decide if we keep body overflow hidden
+  const isAnyLightboxVisible = Array.from(document.querySelectorAll(".lightbox-gallery")).some(g => g.style.display === "flex");
+  if (!isAnyLightboxVisible) {
+    document.body.style.overflow = "auto";
+  }
+};
+
+if (viewerClose) {
+  viewerClose.addEventListener("click", closeViewer);
+}
+
+if (imageViewer) {
+  imageViewer.addEventListener("click", (e) => {
+    if (e.target === imageViewer) {
+      closeViewer();
+    }
+  });
+}
 
 function contact(event) {
   event.preventDefault();
