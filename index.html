@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tony's Landscaping</title>
+    <title>Tony's Landscaping LLC | Premium St. Louis Outdoor Design</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
@@ -12,249 +12,187 @@
   </head>
   <body>
     <header>
-      <nav>
-        <a href="#hero" class="logo">Tony's Landscaping</a>
-        <ul class="nav-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#about">About</a></li>
-          <li><button id="contactBtnHeader"  value="send" class="contact-btn">Contact</button></li>
+      <nav class="container">
+        <div class="logo">
+          <span class="logo-main">TONY'S</span>
+          <span class="logo-sub">LANDSCAPING LLC</span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="nav-item">Home</a></li>
+          <li><a href="#services" class="nav-item">Services</a></li>
+          <li><a href="#about" class="nav-item">About</a></li>
+          <li><a href="#calculator" class="nav-item">Estimate</a></li>
+          <li><button class="btn-primary" id="openModalBtn">Inquire</button></li>
         </ul>
-         <button class="hamburger-btn" aria-label="Toggle navigation">
-                 <span class="hamburger-bar"></span>
-                 <span class="hamburger-bar"></span>
-                  <span class="hamburger-bar"></span>
-             </button>
+        <button class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </nav>
     </header>
 
     <main>
-      <section id="hero">
-        <div class="hero-content">
-          <div class="reveal status-badge">
-            <span class="status-dot-green"></span>
-            <span class="status-badge-text">Accepting Projects for 2026</span>
+      <section id="hero" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content container">
+          <div class="status-badge">
+            <span class="dot"></span>
+            Booking for Spring 2026
           </div>
-          <h1 class="reveal">Crafting Beautiful Outdoor Spaces</h1>
-          <p class="reveal hero-subtext">
-            We don't just plant gardens. We architect ecosystems that evolve with the seasons and your lifestyle.
+          <h1>Crafting the <br /><span class="italic">Exceptional</span></h1>
+          <p>
+            St. Louis's premier destination for high-fidelity landscape architecture and outdoor living transformations.
           </p>
+          <div class="hero-actions">
+            <a href="#services" class="btn-primary">Explore Works</a>
+            <a href="#calculator" class="btn-outline">Calculate Scope</a>
+          </div>
         </div>
-        
-        <!-- Stats Marquee (Infinite Scroll) -->
-        <div class="marquee-container reveal">
-          <div class="marquee-content animate-marquee">
-            <span>Sustainable Design</span> <span class="dot">•</span>
-            <span>Native Flora</span> <span class="dot">•</span>
-            <span>Architectural Integration</span> <span class="dot">•</span>
-            <span>Water Conservation</span> <span class="dot">•</span>
-            <!-- Repeat for infinite effect -->
-            <span>Sustainable Design</span> <span class="dot">•</span>
-            <span>Native Flora</span> <span class="dot">•</span>
-            <span>Architectural Integration</span> <span class="dot">•</span>
-            <span>Water Conservation</span> <span class="dot">•</span>
-            <span>Sustainable Design</span> <span class="dot">•</span>
-            <span>Native Flora</span> <span class="dot">•</span>
-            <span>Architectural Integration</span> <span class="dot">•</span>
-            <span>Water Conservation</span> <span class="dot">•</span>
+
+        <div class="hero-slider-wrap">
+          <div class="ba-container">
+            <div id="beforeImg" class="ba-img before" style="background-image: url('fronthillbefore.jpeg');"></div>
+            <div id="afterImg" class="ba-img after" style="background-image: url('fronthillafter.jpeg');"></div>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-tab active" data-before="fronthillbefore.jpeg" data-after="fronthillafter.jpeg">Project Alpha</button>
+            <button class="slider-tab" data-before="frontlandscapebefore.jpeg" data-after="frontlandscape.jpeg">The Estate</button>
+            <button class="slider-tab" data-before="stonepatiobefore.jpg" data-after="stonepatio.jpeg">Stone Arch</button>
           </div>
         </div>
       </section>
 
-      <section id="transformation" class="reveal">
+      <div class="marquee-section">
+        <div class="marquee">
+          <div class="marquee-content">
+            <span>Retaining Walls</span>
+            <span class="separator">•</span>
+            <span>Landscape Design</span>
+            <span class="separator">•</span>
+            <span>Drainage Solutions</span>
+            <span class="separator">•</span>
+            <span>Paver Patios</span>
+            <span class="separator">•</span>
+            <span>Outdoor Lighting</span>
+            <span class="separator">•</span>
+            <span>Spring Cleanup</span>
+            <span class="separator">•</span>
+            <span>Retaining Walls</span>
+            <span class="separator">•</span>
+            <span>Landscape Design</span>
+            <span class="separator">•</span>
+            <span>Drainage Solutions</span>
+            <span class="separator">•</span>
+            <span>Paver Patios</span>
+            <span class="separator">•</span>
+            <span>Outdoor Lighting</span>
+            <span class="separator">•</span>
+            <span>Spring Cleanup</span>
+            <span class="separator">•</span>
+          </div>
+        </div>
+      </div>
+
+      <section id="services" class="services">
         <div class="container">
-          <h1 class="reveal stagger-1 transformation-title">
-            From barren earth<br>
-            to <span class="italic-art">living art.</span>
-          </h1>
-          <br>
-          <p class="section-intro">Experience the precision and care we bring to every project. Slide to see the results.</p>
-        
-          <div class="transformation-selector">
-            <button class="transformation-tab active" data-before="./fronthillbefore.jpeg" data-after="./fronthillafter.jpeg">Front Hill</button>
-            <button class="transformation-tab" data-before="./frontstepbefore.jpeg" data-after="./frontstepafter.jpeg">Front Step</button>
-            <button class="transformation-tab" data-before="./stonepatiobefore.jpg" data-after="./stonepatio.jpeg">Stone Patio</button>
-            <button class="transformation-tab" data-before="./frontlandscapebefore.jpeg" data-after="./frontlandscape.jpeg">Garden Bed</button>
+          <div class="section-title reveal">
+            <span class="subtitle">Our Expertise</span>
+            <h2>Architectural Solutions</h2>
           </div>
-
-          <div class="comparison-slider">
-            <div class="before-image">
-              <img id="beforeImg" src="./fronthillbefore.jpeg" alt="Before landscaping">
-              <div class="label-before">Before</div>
+          <div class="services-grid">
+            <div class="service-card" onclick="openLightbox('stoneModal')">
+              <div class="card-img" style="background-image: url('stonepatio.jpeg');"></div>
+              <div class="card-body">
+                <h3>Stone Work & Patios</h3>
+                <p>Custom paver patios and natural stone pathways designed for durability and aesthetic flow.</p>
+                <span class="view-gallery">View Gallery <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
-            <div class="after-image">
-              <img id="afterImg" src="./fronthillafter.jpeg" alt="After landscaping">
-              <div class="label-after">After</div>
+            <div class="service-card" onclick="openLightbox('landscapeModal')">
+              <div class="card-img" style="background-image: url('frontlandscape.jpeg');"></div>
+              <div class="card-body">
+                <h3>Landscape Renovation</h3>
+                <p>Complete overhauls using high-quality nursery stock and architectural layering techniques.</p>
+                <span class="view-gallery">View Gallery <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
-            <input type="range" min="0" max="100" value="50" class="slider-handle" id="beforeAfterSlider">
-            <div class="slider-line"></div>
-            <div class="slider-button">
-              <i class="fa-solid fa-arrows-left-right"></i>
+            <div class="service-card" onclick="openLightbox('retainingModal')">
+              <div class="card-img" style="background-image: url('frontsidelandscapeplants.jpeg');"></div>
+              <div class="card-body">
+                <h3>Retaining Walls</h3>
+                <p>Structural integrity meets visual appeal. Engineered solutions for complex Missouri terrain.</p>
+                <span class="view-gallery">View Gallery <i class="fas fa-arrow-right"></i></span>
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="services">
-        <h2>Our Services</h2>
-        <div class="cards-container">
-          <div class="card reveal">
-            <h3>Lawn & Garden Care</h3>
-            <ul>
-              <li>Mowing, edging, and trimming</li>
-              <li>Planting</li>
-              <li>Aeration and overseeding</li>
-              <li>Seasonal cleanups</li>
-            </ul>
-          </div>
-          <div class="card reveal">
-            <h3>Hardscaping & Patios</h3>
-            <ul>
-              <li>Paver and stone patios</li>
-              <li>Retaining walls</li>
-              <li>Walkways and paths</li>
-              <li>Fire pits and outdoor kitchens</li>
-            </ul>
-          </div>
-          <div class="card reveal">
-            <h3>Planting & Garden Design</h3>
-            <ul>
-              <li>Garden bed design and installation</li>
-              <li>Tree and shrub planting</li>
-              <li>Mulching and soil amendment</li>
-              <li>Flower and perennial gardens</li>
-            </ul>
           </div>
         </div>
       </section>
 
-      <section id="gallery">
-        <h2 class="gallery_title reveal">Our Portfolio</h2>
-        <p class="gallery-intro reveal">
-          Explore our diverse range of projects, bringing beauty and
-          functionality to every outdoor space.
-        </p>
-        <div class="cards-container">
-          <a
-            href="#"
-            class="service-card-trigger card reveal"
-            data-gallery-target="lawn-gallery"
-          >
-            <img src="./fronthillafter.jpeg" alt="Lawn Mowing" />
-            <div class="card-overlay">
-              <h3>Lawn Care</h3>
-              <p>Click to view our work</p>
+      <section id="about" class="about">
+        <div class="container about-grid">
+          <div class="about-content reveal">
+            <span class="subtitle">The Vision</span>
+            <h2>Led by Antonio<br />"Tony" Santiago</h2>
+            <p>
+              With over a decade of dedicated service in the St. Louis area, Tony has transformed hundreds of residential spaces into functional works of art. 
+            </p>
+            <p>
+              Our philosophy is simple: prioritize structural longevity and timeless design. We don't just plant flowers; we engineer environments that evolve with your property.
+            </p>
+            <div class="about-stats">
+              <div class="stat">
+                <span class="number">10+</span>
+                <span class="label">Years Experience</span>
+              </div>
+              <div class="stat">
+                <span class="number">500+</span>
+                <span class="label">Projects Completed</span>
+              </div>
             </div>
-          </a>
-          <a
-            href="#"
-            class="service-card-trigger card reveal"
-            data-gallery-target="hardscaping-gallery"
-          >
-            <img
-              src="./stonepatioduring.jpg"
-              alt="Hardscaping and Patios"
-              class="gallery-cover-image"
-            />
-            <div class="card-overlay">
-              <h3>Hardscaping & Patios</h3>
-              <p>Click to view our work</p>
-            </div>
-          </a>
-          <a
-            href="#"
-            class="service-card-trigger card reveal"
-            data-gallery-target="planting-gallery"
-          >
-            <img src="./frontsidelandscapeplants.jpeg" alt="Garden Design" />
-            <div class="card-overlay">
-              <h3>Planting & Garden Design</h3>
-              <p>Click to view our work</p>
-            </div>
-          </a>
-          <a
-            href="#"
-            class="service-card-trigger card reveal"
-            data-gallery-target="more-projects-gallery"
-          >
-            <img src="./assets/484926004_575519298879137_613399954612919515_n.jpg" alt="More Projects" />
-            <div class="card-overlay">
-              <h3>More Projects</h3>
-              <p>Click to view more of our work</p>
-            </div>
-          </a>
+          </div>
+          <div class="about-visual reveal">
+            <img src="./assets/tonysolo.jpg" alt="Tony Santiago" class="tony-portrait" />
+          </div>
         </div>
       </section>
 
-      <section id="about">
-        <h2 class="about_title reveal">Tony's Landscape</h2>
-        <p class="reveal">
-          Founded in 2022, Tony's Landscape has been dedicated to creating and
-          maintaining beautiful landscapes with a commitment to quality and
-          customer satisfaction. Our team of experienced horticulturists and
-          designers works closely with you to turn your outdoor dreams into
-          reality. We believe in sustainable practices, using eco-friendly
-          materials and methods whenever possible.
-        </p>
-      </section>
-
-      <!-- Calculator / Inquiry Section -->
-      <section id="calculator" class="calculator-section">
-        <div class="container-narrow">
-          <div class="reveal text-center mb-16">
-            <h2 class="calculator-title">Estimate your scope.</h2>
-            <p class="calculator-intro">Select your property size to get started.</p>
-          </div>
-
-          <div class="reveal stagger-1 calculator-card">
-            <div class="calculator-content">
-              <div class="slider-group">
-                <div class="slider-header">
-                  <span class="label">Property Size</span>
-                  <span class="value" id="size-display">0.5 Acres</span>
+      <section id="calculator" class="calculator">
+        <div class="container">
+          <div class="calc-grid">
+            <div class="calc-text reveal">
+              <span class="subtitle">Interactive</span>
+              <h2>Project Scope Estimator</h2>
+              <p>Select the services you're considering to generate an architectural baseline for your project.</p>
+              
+              <div class="calc-options">
+                <div class="calc-item" data-price="2500">
+                  <span class="item-name">Small Landscape Refresh</span>
+                  <span class="item-price">$2,500+</span>
                 </div>
-                <input type="range" min="0.1" max="5" step="0.1" value="0.5" class="size-slider" id="size-slider">
-                <div class="slider-footer">
-                  <span>0.1 ac</span>
-                  <span>5.0+ ac</span>
+                <div class="calc-item" data-price="8500">
+                  <span class="item-name">Full Property Overhaul</span>
+                  <span class="item-price">$8,500+</span>
+                </div>
+                <div class="calc-item" data-price="12000">
+                  <span class="item-name">Paver Patio (300sqft+)</span>
+                  <span class="item-price">$12,000+</span>
+                </div>
+                <div class="calc-item" data-price="5000">
+                  <span class="item-name">Retaining Wall Solution</span>
+                  <span class="item-price">$5,000+</span>
                 </div>
               </div>
-
-              <div class="scope-grid">
-                <button class="scope-btn" data-type="full-design">
-                  <div class="btn-text">
-                    <div class="btn-title">Full Design</div>
-                    <div class="btn-desc">Complete architectural planning</div>
-                  </div>
-                  <div class="radio-circle">
-                    <div class="radio-dot"></div>
-                  </div>
-                </button>
-                <button class="scope-btn" data-type="partial-design">
-                  <div class="btn-text">
-                    <div class="btn-title">Partial Design</div>
-                    <div class="btn-desc">Garden refresh & planting</div>
-                  </div>
-                  <div class="radio-circle">
-                    <div class="radio-dot"></div>
-                  </div>
-                </button>
-                <button class="scope-btn" data-type="hardscaping">
-                  <div class="btn-text">
-                    <div class="btn-title">Hardscaping</div>
-                    <div class="btn-desc">Patios, pools, and walkways</div>
-                  </div>
-                  <div class="radio-circle">
-                    <div class="radio-dot"></div>
-                  </div>
-                </button>
-              </div>
-
-              <div class="consultation-action">
-                <button class="consult-submit-btn" onclick="openModal()">
-                  Request Consultation
-                  <i class="fa-solid fa-arrow-right"></i>
-                </button>
+            </div>
+            <div class="calc-result-box reveal">
+              <div class="result-content">
+                <h4>Estimated Investment</h4>
+                <div class="total-wrap">
+                  <span class="currency">$</span>
+                  <span id="totalEstimate" class="total">0</span>
+                </div>
+                <p>Final pricing determined by site analysis, material selection, and specific grading requirements.</p>
+                <button class="btn-primary" onclick="openLightbox('contactModal')">Finalize This Quote</button>
               </div>
             </div>
           </div>
@@ -262,195 +200,131 @@
       </section>
     </main>
 
-    <footer>
-      <div class="footer-content">
-        <ul class="footer-links">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/profile.php?id=100092632141929" target="_blank" aria-label="Visit our Facebook page">
-            <i class="fa-brands fa-facebook"></i>
-          </a>
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-main">TONY'S</span>
+            <span class="logo-sub">LANDSCAPING LLC</span>
+          </div>
+          <p>Defining the standard for outdoor excellence in St. Louis since 2012.</p>
         </div>
-        <p class="copyright">&copy; 2026 Tony's Landscaping. All Rights Reserved.</p>
+        <div class="footer-contact">
+          <h4>Connection</h4>
+          <p><i class="fas fa-phone"></i> (314) 255-6141</p>
+          <p><i class="fas fa-envelope"></i> tony@tonyslandscapingllc.com</p>
+          <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100092632141929" target="_blank" aria-label="Visit our Facebook page">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Tony's Landscaping LLC. All Rights Reserved.</p>
       </div>
     </footer>
-
-    <!-- Lightboxes for each service -->
-    <div class="lightbox-gallery" id="lawn-gallery">
-      <button class="lightbox-close-btn">&times;</button>
-      <div class="lightbox-content">
-        <h2>Lawn & Garden Care Gallery</h2>
-        <div class="lightbox-grid">
-          <img src="./fronthillafter.jpeg" alt="Hill Side After" />
-          <img src="./fronthillduring.jpeg" alt="Hill Side During" />
-          <img src="./fronthillbefore.jpeg" alt="Hill Side Before" />
-        </div>
-      </div>
-    </div>
-
-    <div class="lightbox-gallery" id="hardscaping-gallery">
-      <button class="lightbox-close-btn">&times;</button>
-      <div class="lightbox-content">
-        <h2>Hardscaping & Patios Gallery</h2>
-        <div class="lightbox-grid">
-          <img src="./stonepatio.jpeg" alt="Stone Patio Main" />
-          <img src="./stonebackpatio.jpeg" alt="Stone Back Patio" />
-          <img src="./stonepatioback.jpg" alt="Stone Patio Back View" />
-          <img src="./stonepatioduring.jpg" alt="Stone Patio During Construction" />
-          <img src="./stonepatioduring1.jpg" alt="Stone Patio During Construction 1" />
-          <img src="./stonepatioduring2.jpg" alt="Stone Patio During Construction 2" />
-          <img src="./stonepatiobefore.jpg" alt="Stone Patio Before" />
-          <img src="./frontstepafter.jpeg" alt="Front Step After" />
-          <img src="./frontstepafter2.jpeg" alt="Front Step After 2" />
-          <img src="./frontstepafter3.jpeg" alt="Front Step After 3" />
-          <img src="./frontstepduring.jpeg" alt="Front Step During" />
-          <img src="./frontstepduring2.jpeg" alt="Front Step During 2" />
-          <img src="./frontstepbefore.jpeg" alt="Front Step Before" />
-        </div>
-      </div>
-    </div>
-
-    <div class="lightbox-gallery" id="planting-gallery">
-      <button class="lightbox-close-btn">&times;</button>
-      <div class="lightbox-content">
-        <h2>Planting & Garden Design Gallery</h2>
-        <div class="lightbox-grid">
-          <img src="./fountainlandscape.jpeg" alt="Fountain Landscape" />
-          <img src="./fountainlandscape2.jpeg" alt="Fountain Landscape 2" />
-          <img src="./fountainlandscape3.jpeg" alt="Fountain Landscape 3" />
-          <img src="./fountainlandscape4.jpeg" alt="Fountain Landscape 4" />
-          <img src="./fountainlandscape5.jpeg" alt="Fountain Landscape 5" />
-          <img src="./frontlandscape.jpeg" alt="Front Landscape Complete" />
-          <img src="./frontlandscapeplants.jpeg" alt="Front Landscape Plants" />
-          <img src="./frontsidelandscapeplants.jpeg" alt="Front Side Landscape Plants" />
-          <img src="./frontlandscapebefore.jpeg" alt="Front Landscape Before" />
-          <img src="./stonelandscape.jpeg" alt="Stone Landscape" />
-          <img src="./stonelandscape2.jpeg" alt="Stone Landscape Detail" />
-        </div>
-      </div>
-    </div>
-
-    <div class="lightbox-gallery" id="more-projects-gallery">
-      <button class="lightbox-close-btn">&times;</button>
-      <div class="lightbox-content">
-        <h2>More Projects Gallery</h2>
-        <div class="lightbox-grid">
-          <img src="./assets/482226707_571142382650162_5096398675258649901_n.jpg" alt="Recent Work" />
-          <img src="./assets/482806880_569746892789711_2418545784118109693_n.jpg" alt="Recent Work" />
-          <img src="./assets/482808198_570287779402289_144461487831563777_n.jpg" alt="Recent Work" />
-          <img src="./assets/482829207_570287569402310_106382394807877365_n.jpg" alt="Recent Work" />
-          <img src="./assets/482829672_569746602789740_2672763530071881080_n.jpg" alt="Recent Work" />
-          <img src="./assets/482831429_569746796123054_3473367811881172433_n.jpg" alt="Recent Work" />
-          <img src="./assets/482974824_571142505983483_4522086908411666032_n.jpg" alt="Recent Work" />
-          <img src="./assets/482978448_571142329316834_1185478983890027287_n.jpg" alt="Recent Work" />
-          <img src="./assets/482979468_571142285983505_9211801817885324196_n.jpg" alt="Recent Work" />
-          <img src="./assets/482986488_571142289316838_3047211232506603298_n.jpg" alt="Recent Work" />
-          <img src="./assets/482986558_571142242650176_6267566867507602872_n.jpg" alt="Recent Work" />
-          <img src="./assets/483378952_570287776068956_6039764776568953448_n.jpg" alt="Recent Work" />
-          <img src="./assets/483493429_571842599246807_3759308533704098737_n.jpg" alt="Recent Work" />
-          <img src="./assets/483580565_571842325913501_9160342878973987341_n.jpg" alt="Recent Work" />
-          <img src="./assets/483597938_571842502580150_3835684172455104036_n.jpg" alt="Recent Work" />
-          <img src="./assets/483598727_571842625913471_2389668427313078962_n.jpg" alt="Recent Work" />
-          <img src="./assets/483654190_571842609246806_3490428686896003165_n.jpg" alt="Recent Work" />
-          <img src="./assets/483747250_571842329246834_6888056567549007049_n.jpg" alt="Recent Work" />
-          <img src="./assets/483753549_571842222580178_6806346920313921318_n.jpg" alt="Recent Work" />
-          <img src="./assets/483763764_571842485913485_539768756047881141_n.jpg" alt="Recent Work" />
-          <img src="./assets/483818182_569746609456406_3324145016519634962_n.jpg" alt="Recent Work" />
-          <img src="./assets/483851175_569746596123074_8289118819006002136_n.jpg" alt="Recent Work" />
-          <img src="./assets/483853989_571842315913502_5235025435432630689_n.jpg" alt="Recent Work" />
-          <img src="./assets/483863620_569746659456401_5792943658915525355_n.jpg" alt="Recent Work" />
-          <img src="./assets/483903977_571842592580141_5139485392844459896_n.jpg" alt="Recent Work" />
-          <img src="./assets/483910407_571842319246835_2620513131314759150_n.jpg" alt="Recent Work" />
-          <img src="./assets/484034094_574292135668520_2613041025789499762_n.jpg" alt="Recent Work" />
-          <img src="./assets/484034732_569746582789742_1789389448280750559_n.jpg" alt="Recent Work" />
-          <img src="./assets/484049246_574291995668534_2796694192107434692_n.jpg" alt="Recent Work" />
-          <img src="./assets/484121415_574291859001881_1422321789099110559_n.jpg" alt="Recent Work" />
-          <img src="./assets/484139344_574291855668548_3767668100108626082_n.jpg" alt="Recent Work" />
-          <img src="./assets/484173143_574291982335202_8895056620898159539_n.jpg" alt="Recent Work" />
-          <img src="./assets/484230890_571842375913496_1333115902954296064_n.jpg" alt="Recent Work" />
-          <img src="./assets/484327938_575518445545889_8425879461881733115_n.jpg" alt="Recent Work" />
-          <img src="./assets/484355451_575519568879110_2719092352884620504_n.jpg" alt="Recent Work" />
-          <img src="./assets/484357187_571842249246842_425531683269334085_n.jpg" alt="Recent Work" />
-          <img src="./assets/484471290_575518488879218_4273731606577108868_n.jpg" alt="Recent Work" />
-          <img src="./assets/484514837_571842252580175_369821319857700861_n.jpg" alt="Recent Work" />
-          <img src="./assets/484540106_575518288879238_5965232520740683287_n.jpg" alt="Recent Work" />
-          <img src="./assets/484633302_575518708879196_5022826737872113984_n.jpg" alt="Recent Work" />
-          <img src="./assets/484635005_575209265576807_2988293520486137577_n.jpg" alt="Recent Work" />
-          <img src="./assets/484787568_574291869001880_5797678162101251701_n.jpg" alt="Recent Work" />
-          <img src="./assets/484802064_575209322243468_7601013751129196081_n.jpg" alt="Recent Work" />
-          <img src="./assets/484867743_575209488910118_6819341027461148151_n.jpg" alt="Recent Work" />
-          <img src="./assets/484869335_575209505576783_4025195814233575902_n.jpg" alt="Recent Work" />
-          <img src="./assets/484870808_575209338910133_4166337906148762606_n.jpg" alt="Recent Work" />
-          <img src="./assets/484872693_575209262243474_1230068637787308060_n.jpg" alt="Recent Work" />
-          <img src="./assets/484926004_575519298879137_613399954612919515_n.jpg" alt="Recent Work" />
-        </div>
-      </div>
-    </div>
 
     <div id="contactModal" class="modal">
       <div class="modal-content">
         <span class="close-btn">&times;</span>
-        <h2>Contact Us</h2>
-        <p>Have a question or want a quote? Send us a message!</p>
-        <form id="contactForm" onsubmit="contact(event)">
-          <label for="name">Name:</label>
-          <input type="text" id="name" name="name" required >
-
-          <label for="contactInfo">Email or Phone:</label>
-          <input type="text" id="contactInfo" name="contactInfo" required>
-
-          <label for="scope">Project Scope:</label>
-          <select id="scope" name="project_scope" required class="form-select">
-            <option value="" disabled selected>Select an option</option>
-            <option value="Full Design">Full Design</option>
-            <option value="Partial Design">Partial Design</option>
-            <option value="Hardscaping">Hardscaping</option>
-          </select>
-
-          <label for="message">Message:</label>
-          <textarea id="message" name="message" rows="4" required></textarea>
-
-          <button  value="send" type="submit">Send Message</button>
-         
-                </form>
-                <div class="modal__overlay modal__overlay--loading">
-                    <i class="fas fa-spinner"></i>
-                </div>
-                <div class="modal__overlay modal__overlay--success">
-                    Thanks for the message! Looking forward to speaking to you soon.
-                </div>
+        <h3>Project Inquiry</h3>
+        <p>Ready to transform your property? Start the process here.</p>
+        <form id="contactForm">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" name="user_name" placeholder="Name" required />
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" name="user_email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea name="message" placeholder="Tell us about your project..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%;">Initialize Transmission</button>
         </form>
+        <div id="successOverlay" class="success-overlay">
+          <div class="success-box">
+            <div class="checkmark-circle">
+              <div class="checkmark"></div>
+            </div>
+            <h4>Submission Successful</h4>
+            <p>We'll be in touch shortly.</p>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div id="image-viewer" class="image-viewer">
-      <span class="viewer-close">&times;</span>
-      <img class="viewer-content" id="full-viewer-img">
+    <div id="stoneModal" class="lightbox-modal">
+      <div class="lightbox-content container">
+        <button class="close-lightbox" onclick="closeLightbox('stoneModal')">&times;</button>
+        <div class="gallery-header">
+          <h2>Paver Patios & Stone Work</h2>
+          <p>Custom structural foundations for outdoor entertainment.</p>
+        </div>
+        <div class="gallery-grid">
+          <img src="stonepatio.jpeg" alt="Paver Patio" />
+          <img src="stonepatioback.jpg" alt="Paver Patio" />
+          <img src="stonebackpatio.jpeg" alt="Paver Patio" />
+          <img src="stonepatioduring.jpg" alt="Paver Patio" />
+          <img src="stonepatioduring1.jpg" alt="Paver Patio" />
+          <img src="stonepatioduring2.jpg" alt="Paver Patio" />
+        </div>
+      </div>
+    </div>
+
+    <div id="landscapeModal" class="lightbox-modal">
+      <div class="lightbox-content container">
+        <button class="close-lightbox" onclick="closeLightbox('landscapeModal')">&times;</button>
+        <div class="gallery-header">
+          <h2>Landscape Renovation</h2>
+          <p>Revitalizing residential aesthetics with premium softscapes.</p>
+        </div>
+        <div class="gallery-grid">
+          <img src="frontlandscape.jpeg" alt="Landscape" />
+          <img src="frontlandscapeplants.jpeg" alt="Landscape" />
+          <img src="frontsidelandscapeplants.jpeg" alt="Landscape" />
+          <img src="frontlandscapebefore.jpeg" alt="Landscape Before" />
+          <img src="fountainlandscape.jpeg" alt="Landscape" />
+          <img src="fountainlandscape2.jpeg" alt="Landscape" />
+          <img src="fountainlandscape3.jpeg" alt="Landscape" />
+          <img src="fountainlandscape4.jpeg" alt="Landscape" />
+          <img src="fountainlandscape5.jpeg" alt="Landscape" />
+        </div>
+      </div>
+    </div>
+
+    <div id="retainingModal" class="lightbox-modal">
+      <div class="lightbox-content container">
+        <button class="close-lightbox" onclick="closeLightbox('retainingModal')">&times;</button>
+        <div class="gallery-header">
+          <h2>Retaining Walls</h2>
+          <p>Engineered structural solutions for Missouri soil.</p>
+        </div>
+        <div class="gallery-grid">
+          <img src="frontsidelandscapeplants.jpeg" alt="Retaining Wall" />
+          <img src="fronthillafter.jpeg" alt="Retaining Wall" />
+          <img src="fronthillbefore.jpeg" alt="Retaining Wall Before" />
+          <img src="stonelandscape.jpeg" alt="Retaining Wall" />
+          <img src="stonelandscape2.jpeg" alt="Retaining Wall" />
+          <img src="frontstepafter.jpeg" alt="Retaining Wall" />
+          <img src="frontstepafter2.jpeg" alt="Retaining Wall" />
+          <img src="frontstepafter3.jpeg" alt="Retaining Wall" />
+          <img src="frontstepbefore.jpeg" alt="Retaining Wall Before" />
+          <img src="frontstepduring.jpeg" alt="Retaining Wall During" />
+          <img src="frontstepduring2.jpeg" alt="Retaining Wall During" />
+        </div>
+      </div>
+    </div>
+
+    <div id="fullscreenViewer" class="fullscreen-viewer">
+      <span class="close-viewer" onclick="closeViewer()">&times;</span>
+      <img id="viewerImg" src="" alt="Fullscreen View" />
     </div>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script type="text/javascript">
-        (function () {
-            emailjs.init("NtZIXLy7p6OXJHHbQ"); 
-        })();
-        </script>
-        <script type="text/javascript">
-        window.onload = function() {
-            document.getElementById('contactForm').addEventListener('submit', function(event) {
-                event.preventDefault();
-                // these IDs from the previous steps
-                emailjs.sendForm('service_9kmr7ne', 'template_cdr3twz', this)
-                    .then(() => {
-                        console.log('SUCCESS!');
-                    }, (error) => {
-                        console.log('FAILED...', error);
-                    });
-            });
-        }
-    </script>
     <script src="script.js"></script>
   </body>
 </html>
