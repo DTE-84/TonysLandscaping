@@ -38,26 +38,59 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ── Hero tab switcher (background-image tiles) ──
   const sliderContainer = document.querySelector(".ba-container");
   const sliderTabs = document.querySelectorAll(".slider-tab");
-  const beforeImg = document.getElementById("beforeImg");
-  const afterImg = document.getElementById("afterImg");
+  const heroBeforeImg = document.getElementById("beforeImg");
+  const heroAfterImg = document.getElementById("afterImg");
 
-  sliderTabs.forEach((tab) => {
+  if (sliderContainer) {
+    sliderTabs.forEach((tab) => {
+      tab.addEventListener("click", () => {
+        sliderTabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+        sliderContainer.classList.add("fade-out");
+        setTimeout(() => {
+          heroBeforeImg.style.backgroundImage = `url('${tab.getAttribute("data-before")}')`;
+          heroAfterImg.style.backgroundImage = `url('${tab.getAttribute("data-after")}')`;
+          sliderContainer.classList.remove("fade-out");
+        }, 300);
+      });
+    });
+  }
+
+  // ── Draggable before/after comparison slider ──
+  const dragSlider    = document.getElementById("beforeAfterSlider");
+  const afterImageEl  = document.querySelector(".after-image");
+  const sliderLine    = document.querySelector(".slider-line");
+  const sliderBtn     = document.querySelector(".slider-button");
+  const transformTabs = document.querySelectorAll(".transformation-tab");
+  const dragBefore    = document.querySelector(".before-image img");
+  const dragAfter     = document.querySelector(".after-image img");
+
+  function setSliderPos(value) {
+    if (afterImageEl) afterImageEl.style.width = value + "%";
+    if (sliderLine)   sliderLine.style.left    = value + "%";
+    if (sliderBtn)    sliderBtn.style.left      = value + "%";
+  }
+
+  if (dragSlider) {
+    dragSlider.addEventListener("input", (e) => setSliderPos(e.target.value));
+    setSliderPos(50);
+  }
+
+  transformTabs.forEach((tab) => {
     tab.addEventListener("click", () => {
-      const before = tab.getAttribute("data-before");
-      const after = tab.getAttribute("data-after");
-
-      sliderTabs.forEach((t) => t.classList.remove("active"));
+      transformTabs.forEach((t) => t.classList.remove("active"));
       tab.classList.add("active");
-
-      sliderContainer.classList.add("fade-out");
-
+      if (afterImageEl) afterImageEl.style.opacity = "0";
       setTimeout(() => {
-        beforeImg.style.backgroundImage = `url('${before}')`;
-        afterImg.style.backgroundImage = `url('${after}')`;
-        sliderContainer.classList.remove("fade-out");
-      }, 300);
+        if (dragBefore) dragBefore.src = tab.dataset.before;
+        if (dragAfter)  dragAfter.src  = tab.dataset.after;
+        if (dragSlider) dragSlider.value = 50;
+        setSliderPos(50);
+        if (afterImageEl) afterImageEl.style.opacity = "1";
+      }, 220);
     });
   });
 

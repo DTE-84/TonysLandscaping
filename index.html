@@ -93,6 +93,41 @@
           </div>
         </div>
       </div>
+      <section id="transformation" class="reveal">
+        <div class="container">
+          <h2>The Transformation</h2>
+          <h1 class="reveal stagger-1 transformation-title">
+            From barren earth<br>
+            to <span class="italic-art">living art.</span>
+          </h1>
+          <br>
+          <p class="section-intro">Experience the precision and care we bring to every project. Slide to see the results.</p>
+          
+        
+          <div class="transformation-selector">
+            <button class="transformation-tab active" data-before="./fronthillbefore.jpeg" data-after="./fronthillafter.jpeg">Front Hill</button>
+            <button class="transformation-tab" data-before="./frontstepbefore.jpeg" data-after="./frontstepafter.jpeg">Front Step</button>
+            <button class="transformation-tab" data-before="./stonepatiobefore.jpg" data-after="./stonepatio.jpeg">Stone Patio</button>
+            <button class="transformation-tab" data-before="./frontlandscapebefore.jpeg" data-after="./frontlandscape.jpeg">Garden Bed</button>
+          </div>
+
+          <div class="comparison-slider">
+            <div class="before-image">
+              <img id="beforeImg" src="./fronthillbefore.jpeg" alt="Before landscaping">
+              <div class="label-before">Before</div>
+            </div>
+            <div class="after-image">
+              <img id="afterImg" src="./fronthillafter.jpeg" alt="After landscaping">
+              <div class="label-after">After</div>
+            </div>
+            <input type="range" min="0" max="100" value="50" class="slider-handle" id="beforeAfterSlider">
+            <div class="slider-line"></div>
+            <div class="slider-button">
+              <i class="fa-solid fa-arrows-left-right"></i>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section id="services" class="services">
         <div class="container">
@@ -133,13 +168,23 @@
         <div class="container about-grid">
           <div class="about-content reveal">
             <span class="subtitle">The Vision</span>
-            <h2>Led by Antonio<br />"Tony" Santiago</h2>
+            <h2>Tony Bautista<br /></h2>
             <p>
               With over a decade of dedicated service in the St. Louis area, Tony has transformed hundreds of residential spaces into functional works of art. 
             </p>
             <p>
               Our philosophy is simple: prioritize structural longevity and timeless design. We don't just plant flowers; we engineer environments that evolve with your property.
-            </p>
+              </p>
+         
+        <p class="reveal">
+          Founded in 2022, Tony's Landscape has been dedicated to creating and
+          maintaining beautiful landscapes with a commitment to quality and
+          customer satisfaction. Our team of experienced horticulturists and
+          designers works closely with you to turn your outdoor dreams into
+          reality. We believe in sustainable practices, using eco-friendly
+          materials and methods whenever possible.
+        </p>  
+            
             <div class="about-stats">
               <div class="stat">
                 <span class="number">10+</span>
@@ -152,7 +197,7 @@
             </div>
           </div>
           <div class="about-visual reveal">
-            <img src="./assets/tonysolo.jpg" alt="Tony Santiago" class="tony-portrait" />
+            
           </div>
         </div>
       </section>
@@ -162,43 +207,120 @@
           <div class="calc-grid">
             <div class="calc-text reveal">
               <span class="subtitle">Interactive</span>
-              <h2>Project Scope Estimator</h2>
-              <p>Select the services you're considering to generate an architectural baseline for your project.</p>
-              
-              <div class="calc-options">
-                <div class="calc-item" data-price="2500">
-                  <span class="item-name">Small Landscape Refresh</span>
-                  <span class="item-price">$2,500+</span>
-                </div>
-                <div class="calc-item" data-price="8500">
-                  <span class="item-name">Full Property Overhaul</span>
-                  <span class="item-price">$8,500+</span>
-                </div>
-                <div class="calc-item" data-price="12000">
-                  <span class="item-name">Paver Patio (300sqft+)</span>
-                  <span class="item-price">$12,000+</span>
-                </div>
-                <div class="calc-item" data-price="5000">
-                  <span class="item-name">Retaining Wall Solution</span>
-                  <span class="item-price">$5,000+</span>
-                </div>
-              </div>
+              <h2>Project Scope Estimator</h2>        
+      <p class="calculator-intro">Select your property size and services to get started.</p>
+    </div>
+
+    <!-- Card -->
+    <div class="reveal calculator-card">
+      <div class="calculator-content">
+
+        <!-- Property Size Slider -->
+        <div class="slider-group">
+          <div class="slider-header">
+            <span class="label">Property Size</span>
+            <span class="value" id="size-display">0.5 Acres</span>
+          </div>
+          <input type="range" min="0.1" max="5" step="0.1" value="0.5" class="size-slider" id="size-slider">
+          <div class="slider-footer">
+            <span>0.1 ac</span>
+            <span>5.0+ ac</span>
+          </div>
+        </div>
+
+        <!-- Project Type Buttons -->
+        <div class="btn-dsgn" >
+          <button class="scope-btn" data-type="full-design">
+            <div class="btn-text">
+              <div class="btn-title">Full Design</div>
+              <div class="btn-desc">Complete architectural planning</div>
             </div>
-            <div class="calc-result-box reveal">
-              <div class="result-content">
-                <h4>Estimated Investment</h4>
-                <div class="total-wrap">
-                  <span class="currency">$</span>
-                  <span id="totalEstimate" class="total">0</span>
-                </div>
-                <p>Final pricing determined by site analysis, material selection, and specific grading requirements.</p>
-                <button class="btn-primary" onclick="openLightbox('contactModal')">Finalize This Quote</button>
+            <div class="radio-circle"><div class="radio-dot"></div></div>
+          </button>
+          <button class="scope-btn" data-type="partial-design">
+            <div class="btn-text">
+              <div class="btn-title">Partial Design</div>
+              <div class="btn-desc">Garden refresh &amp; planting</div>
+            </div>
+            <div class="radio-circle"><div class="radio-dot"></div></div>
+          </button>
+          <button class="scope-btn" data-type="hardscaping">
+            <div class="btn-text">
+              <div class="btn-title">Hardscaping</div>
+              <div class="btn-desc">Patios, pools, and walkways</div>
+            </div>
+            <div class="radio-circle"><div class="radio-dot"></div></div>
+          </button>
+        </div>
+
+        <!-- Divider -->
+        <hr class="calc-divider">
+
+        
+          <div class="calc-result-box">
+            <div class="result-content">
+              <h4>Estimated Investment</h4>
+              <div class="total-wrap">
+                <span class="currency">$</span>
+                <span id="totalEstimate" class="total">0</span>
               </div>
+              <p>Final pricing determined by site analysis, material selection, and grading requirements.</p>
+              <button class="btn-primary" onclick="openLightbox('contactModal')">Finalize This Quote</button>
             </div>
           </div>
         </div>
-      </section>
-    </main>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ===================================================
+     CONTACT MODAL
+     =================================================== -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>Contact Us</h2>
+    <p>Have a question or want a quote? Send us a message!</p>
+
+    <form id="contactForm">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="contactInfo">Email or Phone</label>
+      <input type="text" id="contactInfo" name="contactInfo" required>
+
+      <label for="scope">Project Scope</label>
+      <select id="scope" name="project_scope" required class="form-select">
+        <option value="" disabled selected>Select an option</option>
+        <option value="Full Design">Full Design</option>
+        <option value="Partial Design">Partial Design</option>
+        <option value="Hardscaping">Hardscaping</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <!-- Loading overlay -->
+    <div class="modal__overlay modal__overlay--loading">
+      <i class="fas fa-spinner fa-spin"></i>
+    </div>
+
+    <!-- Success overlay -->
+    <div class="modal__overlay modal__overlay--success">
+      Thanks for the message! We'll be in touch soon.
+    </div>
+  </div>
+</div>
+
+
+</section>
 
     <footer class="footer">
       <div class="container footer-grid">
@@ -207,12 +329,12 @@
             <span class="logo-main">TONY'S</span>
             <span class="logo-sub">LANDSCAPING LLC</span>
           </div>
-          <p>Defining the standard for outdoor excellence in St. Louis since 2012.</p>
+          <p class="footer-p">Defining the standard for outdoor excellence in St. Louis since 2012.</p>
         </div>
         <div class="footer-contact">
           <h4>Connection</h4>
-          <p><i class="fas fa-phone"></i> (314) 255-6141</p>
-          <p><i class="fas fa-envelope"></i> tony@tonyslandscapingllc.com</p>
+          <p><i class="fas fa-phone"></i> (314) 319-8958</p>
+          <p><i class="fas fa-envelope"></i>tonyslandscapingllc@outlook.com</p>
           <div class="social-links">
             <a href="https://www.facebook.com/profile.php?id=100092632141929" target="_blank" aria-label="Visit our Facebook page">
               <i class="fab fa-facebook-f"></i>
