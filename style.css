@@ -409,7 +409,7 @@ section {
 
 .section-intro {
   text-align: center;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255, 255, 255, 0.4);
   font-size: 0.85rem;
   letter-spacing: 0.5px;
   margin-bottom: 3rem;
@@ -429,10 +429,10 @@ section {
 
 .transformation-tab {
   background: transparent;
-  border: 1px solid rgba(255,255,255,0.15);
-  color: rgba(255,255,255,0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.45);
   padding: 9px 22px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.62rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -443,8 +443,8 @@ section {
 }
 
 .transformation-tab:hover {
-  border-color: rgba(255,255,255,0.4);
-  color: rgba(255,255,255,0.8);
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.8);
 }
 
 .transformation-tab.active {
@@ -462,8 +462,8 @@ section {
   aspect-ratio: 16 / 7;
   overflow: hidden;
   cursor: ew-resize;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
-  border: 1px solid rgba(255,255,255,0.06);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 /* Before image — full width base layer */
@@ -511,7 +511,7 @@ section {
   position: absolute;
   bottom: 20px;
   z-index: 10;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 0.6rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -524,16 +524,16 @@ section {
 
 .label-before {
   left: 20px;
-  background: rgba(0,0,0,0.55);
-  color: rgba(255,255,255,0.75);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(0, 0, 0, 0.55);
+  color: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .label-after {
   right: 20px;
-  background: rgba(93,64,55,0.75);
+  background: rgba(93, 64, 55, 0.75);
   color: #fff;
-  border: 1px solid rgba(188,170,164,0.25);
+  border: 1px solid rgba(188, 170, 164, 0.25);
 }
 
 /* Invisible range input — covers full slider for drag interaction */
@@ -556,11 +556,11 @@ section {
   left: 50%;
   width: 2px;
   height: 100%;
-  background: rgba(255,255,255,0.9);
+  background: rgba(255, 255, 255, 0.9);
   transform: translateX(-50%);
   z-index: 15;
   pointer-events: none;
-  box-shadow: 0 0 12px rgba(0,0,0,0.4);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
 }
 
 /* Drag handle button */
@@ -580,12 +580,18 @@ section {
   font-size: 1rem;
   z-index: 16;
   pointer-events: none;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.35), 0 0 0 4px rgba(255,255,255,0.15);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow:
+    0 4px 20px rgba(0, 0, 0, 0.35),
+    0 0 0 4px rgba(255, 255, 255, 0.15);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .comparison-slider:hover .slider-button {
-  box-shadow: 0 6px 28px rgba(0,0,0,0.45), 0 0 0 6px rgba(255,255,255,0.12);
+  box-shadow:
+    0 6px 28px rgba(0, 0, 0, 0.45),
+    0 0 0 6px rgba(255, 255, 255, 0.12);
 }
 
 @media (max-width: 768px) {
@@ -596,7 +602,8 @@ section {
     padding: 8px 14px;
     font-size: 0.58rem;
   }
-  .label-before, .label-after {
+  .label-before,
+  .label-after {
     font-size: 0.5rem;
     padding: 5px 10px;
     bottom: 12px;
@@ -620,8 +627,6 @@ section {
   color: var(--text-light);
   padding: 8rem 2rem;
 }
-
-
 
 .calculator-title {
   color: var(--white);
@@ -912,8 +917,6 @@ section {
   color: #fff;
 }
 
-
-
 .calc-text h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
@@ -1097,8 +1100,8 @@ section {
 
 .btn-dsgn {
   display: flex;
- align-items: center;
- justify-content: space-evenly;
+  align-items: center;
+  justify-content: space-evenly;
   padding-bottom: 2rem;
 }
 
@@ -1238,14 +1241,13 @@ section {
 
 .footer-bottom {
   display: flex;
- max-width: 1200px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2.5rem;
   opacity: 0.4;
-   
 }
 
 .footer-links {
@@ -2061,4 +2063,5 @@ footer .contact-btn:hover {
 .footer-p {
   max-width: 600px;
   margin: 0 auto;
-  text-align: center;}
+  text-align: center;
+}

@@ -112,23 +112,55 @@ document.addEventListener("DOMContentLoaded", () => {
       observer.observe(el);
     });
 
-  const calcItems = document.querySelectorAll(".calc-item");
+  // ── Project Scope Estimator Logic ──
+  const sizeSlider = document.getElementById("size-slider");
+  const sizeDisplay = document.getElementById("size-display");
+  const scopeBtns = document.querySelectorAll(".scope-btn");
   const totalDisplay = document.getElementById("totalEstimate");
 
-  calcItems.forEach((item) => {
-    item.addEventListener("click", () => {
-      item.classList.toggle("active");
+  const basePrices = {
+    "full-design": 5000,
+    "partial-design": 2500,
+    "hardscaping": 7500
+  };
+
+  let selectedScope = null;
+
+  if (sizeSlider && sizeDisplay) {
+    sizeSlider.addEventListener("input", (e) => {
+      const value = parseFloat(e.target.value).toFixed(1);
+      sizeDisplay.innerText = `${value} Acres`;
+      updateTotal();
+    });
+  }
+
+  scopeBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      scopeBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      selectedScope = btn.getAttribute("data-type");
       updateTotal();
     });
   });
 
   function updateTotal() {
+    if (!totalDisplay) return;
+    
     let total = 0;
-    document.querySelectorAll(".calc-item.active").forEach((activeItem) => {
-      total += parseInt(activeItem.getAttribute("data-price"));
-    });
-    totalDisplay.innerText = total.toLocaleString();
+    const acres = sizeSlider ? parseFloat(sizeSlider.value) : 0.5;
+
+    if (selectedScope && basePrices[selectedScope]) {
+      // Logic: Base price + (Base price * 0.5 * (acres - 0.1)) 
+      // This is a placeholder logic for estimation
+      const base = basePrices[selectedScope];
+      total = base + (base * 0.4 * (acres - 0.1));
+    }
+
+    totalDisplay.innerText = Math.round(total).toLocaleString();
   }
+
+  // Initialize
+  updateTotal();
 });
 
 const contactModal = document.getElementById("contactModal");
