@@ -5,7 +5,7 @@ pages:
   script:
     - mkdir public
     - cp -r * public/
-    - rm -rf public/public # Prevent infinite recursion if public exists
+    - rm -rf public/public # Prevent infinite recursion
   artifacts:
     paths:
       - public
