@@ -124,7 +124,10 @@ document.addEventListener("DOMContentLoaded", () => {
     "hardscaping": 7500
   };
 
-  let selectedScope = null;
+  // Default to full design so the slider shows a value immediately
+  let selectedScope = "full-design";
+  const defaultBtn = document.querySelector('[data-type="full-design"]');
+  if (defaultBtn) defaultBtn.classList.add("active");
 
   if (sizeSlider && sizeDisplay) {
     sizeSlider.addEventListener("input", (e) => {
