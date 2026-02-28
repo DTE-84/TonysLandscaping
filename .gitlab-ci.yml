@@ -1,9 +1,11 @@
+image: busybox
+
 pages:
   stage: deploy
   script:
-    - mkdir .public
-    - cp -r * .public
-    - mv .public public
+    - mkdir public
+    - cp -r * public/
+    - rm -rf public/public # Prevent infinite recursion if public exists
   artifacts:
     paths:
       - public
