@@ -1,11 +1,17 @@
-image: alpine:latest
+﻿image: alpine:latest
 
 pages:
   stage: deploy
   script:
-    - mkdir .public
-    - cp -r * .public
-    - mv .public public
+    - mkdir public
+    # Explicitly copy only website files to avoid deploying .git or other junk
+    - cp -r assets public/ || true
+    - cp index.html public/
+    - cp style.css public/
+    - cp script.js public/
+    # Also copy the loose images in the root
+    - cp *.jpeg public/ || true
+    - cp *.jpg public/ || true
   artifacts:
     paths:
       - public
