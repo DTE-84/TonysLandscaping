@@ -4,14 +4,8 @@ pages:
   stage: deploy
   script:
     - mkdir public
-    # Explicitly copy only website files to avoid deploying .git or other junk
-    - cp -r assets public/ || true
-    - cp index.html public/
-    - cp style.css public/
-    - cp script.js public/
-    # Also copy the loose images in the root
-    - cp *.jpeg public/ || true
-    - cp *.jpg public/ || true
+    - cp -r assets public/
+    - cp index.html style.css script.js public/
   artifacts:
     paths:
       - public
