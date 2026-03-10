@@ -62,7 +62,7 @@
 
 Built with a "Business-First" lens—focusing on ROI, brand authority, and seamless user interaction.
 
-[LinkedIn](https://linkedin.com/in/dte84) · [Portfolio](https://dte-84.github.io) · [Email](mailto:drew.t.ernst@gmail.com)
+[LinkedIn](https://linkedin.com/in/dte84) · [Portfolio](https://dte-84.github.io) · [Email](mailto:dte.solutions.llc@gmail.com)
 
 ---
 
