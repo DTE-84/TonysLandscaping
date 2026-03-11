@@ -244,6 +244,7 @@ window.onload = function () {
 
       emailjs.sendForm("service_akgmg6r", "template_nx4fvkb", this).then(
         () => {
+          console.log("✅ EmailJS Success");
           if (successOverlay) {
             successOverlay.style.display = "flex";
           }
@@ -254,7 +255,10 @@ window.onload = function () {
           form.reset();
         },
         (err) => {
-          alert("Submission failed. Uplink error.");
+          console.error("❌ EmailJS Error:", err);
+          console.error("Status:", err.status);
+          console.error("Text:", err.text);
+          alert(`Submission failed: ${err.text || 'Unknown error'}`);
         },
       );
     });
