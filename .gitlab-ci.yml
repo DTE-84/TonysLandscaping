@@ -6,7 +6,9 @@ pages:
     - mkdir public
     - cp -r assets public/
     - cp index.html style.css script.js public/
-    dummy_job:
+  script:
+    - echo "Pipeline is active"
+  dummy_job:
   stage: .pre
   script:
     - echo "This is a dummy job to keep the pipeline visible"
