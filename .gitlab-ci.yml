@@ -6,9 +6,13 @@ pages:
     - mkdir public
     - cp -r assets public/
     - cp index.html style.css script.js public/
+    dummy_job:
+  stage: .pre
+  script:
+    - echo "This is a dummy job to keep the pipeline visible"
   artifacts:
     paths:
       - public
   rules:
-    - if: $CI_COMMIT_BRANCH == "main" || $CI_COMMIT_BRANCH == "master"
+    - if: $CI_COMMIT_BRANCH
       when: always
