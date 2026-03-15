@@ -3,11 +3,13 @@ image: alpine:latest
 pages:
   stage: deploy
   script:
-    - mkdir public
+    - mkdir -p public
     - cp -r assets public/
     - cp index.html style.css script.js public/
+    - ls -la public/
   artifacts:
     paths:
       - public
   only:
+    - main
     - master
